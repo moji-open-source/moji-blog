@@ -1,0 +1,141 @@
+.TrmPublication {
+  word-break: break-all;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0 10px;
+  margin: 0 auto;
+  max-width: 700px;
+  font-weight: 300;
+}
+
+.TrmPublication p strong {
+  font-weight: 400;
+}
+
+.TrmPublication p + p {
+  margin-bottom: 20px;
+}
+
+.TrmPublication h1,
+.TrmPublication h2,
+.TrmPublication h3,
+.TrmPublication h4,
+.TrmPublication h5 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.TrmPublication h3:before,
+.TrmPublication h4:before,
+.TrmPublication h5:before {
+  content: "#";
+  margin-right: 5px;
+}
+
+.TrmPublication h1,
+.TrmPublication h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.TrmPublication h1 {
+  @apply text-2xl;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.TrmPublication h2 {
+  @apply text-xl;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.TrmPublication h3 {
+}
+
+.TrmPublication ul {
+  padding: 0;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.TrmPublication ul li {
+  position: relative;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.TrmPublication a {
+  color: #4183c4;
+  font-weight: 300;
+}
+
+.TrmPublication blockquote {
+  color: #777777;
+  padding: 0 20px;
+  position: relative;
+}
+
+.TrmPublication > pre,
+.TrmPublication > p,
+.TrmPublication > table,
+.TrmPublication > blockquote {
+  margin-bottom: 15px;
+}
+
+.TrmPublication blockquote > p {
+  margin-bottom: 0;
+}
+
+.TrmPublication blockquote:before {
+  /* content: "\201C"; */
+  content: "";
+  width: 5px;
+  height: 100%;
+  background: #dee2e5;
+  font-size: 40px;
+  position: absolute;
+  left: 3px;
+  top: 0;
+}
+
+.TrmPublication > pre {
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 3px;
+  overflow: auto;
+  border: 1px solid #e1e1e8;
+  border-radius: 5px;
+}
+
+.TrmPublication > table {
+  width: 100%;
+}
+
+.TrmPublication p > code {
+  background: #f3f4f4;
+  border-radius: 5px;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: Courier, ui-monospace, JetBrains Mono, SFMono-Regular, Menlo,
+    Monaco, Consolas, Andale Mono, Liberation Mono, Ubuntu Mono, Courier New,
+    monospace;
+}
+
+.TrmPublication > pre > code {
+  font-size: 14px;
+  font-family: Courier, ui-monospace, JetBrains Mono, SFMono-Regular, Menlo,
+    Monaco, Consolas, Andale Mono, Liberation Mono, Ubuntu Mono, Courier New,
+    monospace;
+}
+
+.TrmPublication {
+  font-family: PT Mono, Courier, ui-monospace, JetBrains Mono, SFMono-Regular,
+    Menlo, Monaco, Consolas, Andale Mono, Liberation Mono, Ubuntu Mono,
+    Courier New, monospace;
+}

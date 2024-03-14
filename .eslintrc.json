@@ -1,0 +1,14 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "semi": [
+      "error",
+      "never"
+    ],
+    "prefer-const": "error",
+    "quotes": [
+      "error",
+      "single"
+    ]
+  }
+}
