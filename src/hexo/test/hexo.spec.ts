@@ -1,4 +1,4 @@
-import { describe, test, expect } from "vitest"
+import { describe, test, expect } from 'vitest'
 import { initHexo } from '../hexo'
 
 describe('hexo', () => {
@@ -8,7 +8,7 @@ describe('hexo', () => {
       title: 'test',
       content: 'test'
     })
-    console.log(hexo.database.Model);
+    console.log(hexo.database.Model)
 
   })
 })
