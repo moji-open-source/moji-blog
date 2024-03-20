@@ -4,6 +4,7 @@ import './globals.css'
 import { inter } from './fonts'
 
 import { Provider } from '#/lib/providers'
+import { Sidbar } from '#/components/sidebar'
 
 export const metadata: Metadata = {
   title: 'Clover\'sBlog',
@@ -16,10 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className="light bg-red-200">
       <body className={inter.className}>
         <Provider>
-          {children}
+          <div className="container m-auto grid grid-rows-1 grid-cols-[340px_1fr]">
+            <Sidbar />
+            {children}
+          </div>
         </Provider>
       </body>
     </html>
