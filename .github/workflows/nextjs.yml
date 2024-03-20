@@ -44,7 +44,7 @@ jobs:
           # Version of pnpm to install
           version: 8.15.5 # optional
           # If specified, run `pnpm install`
-          run_install: pnpm install # optional, default is null
+          run_install: true # optional, default is null
       - name: Detect package manager
         id: detect-package-manager
         run: |
