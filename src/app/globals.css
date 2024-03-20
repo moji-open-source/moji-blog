@@ -11,6 +11,10 @@
   --highlight-gutter-color: #f8f8f8;
 }
 
+body {
+  @apply bg-blog-primary;
+}
+
 .highlight .gutter {
   width: 28px;
   color: var(--highlight-gutter-color);

@@ -7,7 +7,7 @@ export function PostList() {
   const articleHref = '/article/java-base'
 
   const Node = <>
-    <div className="w-full rounded-md grid grid-cols-1 shadow-lg overflow-hidden">
+    <div className="w-full rounded-lg grid grid-cols-1 shadow-lg overflow-hidden bg-white">
       <Link href={articleHref}>
         <Image src="/cover.jpeg" alt="" isZoomed isBlurred className="w-full overflow-hidden rounded-t-lg" radius="none" />
       </Link>
@@ -33,7 +33,7 @@ export function PostList() {
   </>
 
   return <>
-    <div className="grid grid-cols-2 gap-2">
+    <div className="grid grid-cols-2 gap-10">
       {Node}
       {Node}
       {Node}

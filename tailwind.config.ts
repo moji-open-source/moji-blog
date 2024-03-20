@@ -19,6 +19,11 @@ const config: Config = {
       }
     },
     extend: {
+      colors: {
+        'blog-primary': '#00151f',
+        'bg2': '#f4f5f7',
+        'bg1': '#fcfcfe'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
