@@ -12,6 +12,6 @@ const nextConfig = {
     serverComponentsExternalPackages: ['hexo', 'hexo-fs', 'hexo-util']
   },
   output: 'export'
-};
+}
 
-export default nextConfig;
+export default nextConfig

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 import { inter } from './fonts'
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light bg-red-200">
       <body className={inter.className}>
+        <SpeedInsights />
         <Provider>
           <div className="container m-auto grid grid-rows-1 grid-cols-[340px_1fr]">
             <Sidbar />
