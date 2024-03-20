@@ -18,11 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light bg-red-200">
+    <html lang="en" className="light">
       <body className={inter.className}>
         <SpeedInsights />
         <Provider>
-          <div className="container m-auto grid grid-rows-1 grid-cols-[340px_1fr]">
+          <div className="container mx-auto grid grid-rows-1 grid-cols-[340px_1fr]">
             <Sidbar />
             {children}
           </div>

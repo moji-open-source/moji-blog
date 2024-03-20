@@ -9,6 +9,15 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
+    container: {
+      screens: {
+        '2xl': '100%',
+        'sm': '100%',
+        'md': '100%',
+        'lg': '1024px',
+        'xl': '1280px'
+      }
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

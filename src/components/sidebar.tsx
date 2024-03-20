@@ -2,7 +2,7 @@ import { Avatar } from '@nextui-org/avatar'
 
 export function Sidbar() {
   return (
-    <div className="bg-white w-full rounded-md h-screen p-10 box-border">
+    <div className="bg-white w-full rounded-md h-screen p-10 box-border shadow-md">
       <Header />
       <div className="mb-10 mt-10 w-full h-[1px] border-dotted border-b-2 border-b-slate-300 outline-2 outline-offset-2"></div>
     </div>
