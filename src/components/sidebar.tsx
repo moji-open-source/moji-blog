@@ -1,4 +1,6 @@
 import { Avatar } from '@nextui-org/avatar'
+import Image from 'next/image'
+import MyAvatar from '#/assets/avatar.jpg'
 
 export function Sidbar() {
   return (
@@ -9,10 +11,13 @@ export function Sidbar() {
   )
 }
 
+
 function Header() {
   return <>
     <div className="flex flex-col items-center mb-5">
-      <Avatar src="/avatar.jpg" size="lg" className="w-[110px] h-[110px] mb-5" isBordered />
+      <Avatar src={MyAvatar.src} size="lg" className="w-[110px] h-[110px] mb-5" isBordered>
+        <Image src={MyAvatar} alt="" />
+      </Avatar>
 
       <h5 className="text-lg font-[800] text-gray-700 mb-5">尤鱼的鱼</h5>
 

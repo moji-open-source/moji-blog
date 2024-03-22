@@ -24,16 +24,24 @@ export default function RootLayout({
       <body className={inter.className}>
         <SpeedInsights />
         <Provider>
-          <div className="w-screen h-screen overflow-y-auto border-solid border-[10px] border-blog-primary rounded-[20px] box-border bg-bg2">
-            <Header />
-            <Banner />
-            <div className="container mx-auto grid grid-rows-1 grid-cols-[340px_1fr] gap-10 z-0">
-              <Sidbar />
-              <div className="z-[2]">{children}</div>
-              Banner</div>
+          <div className="trm-app-frame">
+            <div className="trm-swup-animation" id="trm-dynamic-content">
+              <div id="trm-scroll-container" className="trm-scroll-container" style={{ opacity: 1 }}>
+                <Header />
+                <div className="trm-content-start">
+                  <Banner />
+                  <div className="container w-full mx-auto px-5">
+                    <div className="container mx-auto grid grid-rows-1 grid-cols-[320px_1fr] gap-10 z-0">
+                      <Sidbar />
+                      <div className="z-[2]">{children}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </Provider>
       </body>
-    </html>
+    </html >
   )
 }
