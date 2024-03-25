@@ -94,3 +94,22 @@ body::before {
 .trm-app-frame .trm-content-start {
   margin: 0 40px;
 }
+
+.card-decoration-mask:after {
+  position: absolute;
+  left: 30px;
+  height: 8px;
+  width: calc(100% - 60px);
+  opacity: 0.3;
+  @apply after:rounded-b-md bg-bg1;
+}
+
+.card-decoration-mask:before {
+  top: -8px;
+  position: absolute;
+  left: 30px;
+  height: 8px;
+  width: calc(100% - 60px);
+  opacity: 0.3;
+  @apply before:rounded-b-md bg-bg1;
+}
