@@ -11,7 +11,7 @@ export function Banner(props: Props) {
         className="z-[1] w-full h-full" removeWrapper />
 
       <div className="pt-20 z-[999] absolute bottom-0 w-full h-full flex items-center">
-        <div className="container pl-5 pr-5">
+        <div className="container pl-5 pr-5 mx-auto">
           <div className="grid grid-rows-1 grid-cols-[320px_1fr] w-full">
             <div className="pl-5 pr-5">s</div>
             <div className="banner-text pl-5 pr-5">
