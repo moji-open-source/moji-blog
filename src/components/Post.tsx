@@ -1,3 +1,4 @@
+import { TitleWithDivider } from '#/components/title-with-divider'
 import { Image } from '@nextui-org/react'
 import Link from 'next/link'
 
@@ -33,6 +34,7 @@ export function PostList() {
   </>
 
   return <>
+    <TitleWithDivider title="Rust" number={6}></TitleWithDivider>
     <div className="grid grid-cols-2 gap-10">
       {Node}
       {Node}
