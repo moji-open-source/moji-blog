@@ -9,9 +9,9 @@ const nextConfig = {
   //   return config;
   // },
   experimental: {
-    serverComponentsExternalPackages: ['hexo', 'hexo-fs', 'hexo-util']
+    serverComponentsExternalPackages: ["hexo", "hexo-fs", "hexo-util"]
   },
-  output: 'export'
+  output: "export"
 }
 
 export default nextConfig
