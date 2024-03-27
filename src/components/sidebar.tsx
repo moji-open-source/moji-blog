@@ -1,6 +1,6 @@
-import { Avatar } from '@nextui-org/avatar'
-import Image from 'next/image'
-import MyAvatar from '#/assets/avatar.jpg'
+import { Avatar } from "@nextui-org/avatar"
+import Image from "next/image"
+import MyAvatar from "#/assets/avatar.jpg"
 
 export function Sidbar() {
   return (

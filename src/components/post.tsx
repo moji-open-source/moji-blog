@@ -1,11 +1,11 @@
-import { TitleWithDivider } from '#/components/title-with-divider'
-import { Image } from '@nextui-org/react'
-import Link from 'next/link'
+import { TitleWithDivider } from "#/components/title-with-divider"
+import { Image } from "@nextui-org/react"
+import Link from "next/link"
 
 export function PostList() {
 
-  const categorieHref = 'www.baidu.com'
-  const articleHref = '/article/java-base'
+  const categorieHref = "www.baidu.com"
+  const articleHref = "/article/java-base"
 
   const Node = <>
     <div className="w-full rounded-lg grid grid-cols-1 shadow-lg overflow-hidden bg-white">

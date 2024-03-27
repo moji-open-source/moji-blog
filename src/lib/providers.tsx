@@ -1,6 +1,6 @@
-'use client'
-import { PropsWithChildren } from 'react'
-import { NextUIProvider } from './NextUIProvider'
+"use client"
+import { PropsWithChildren } from "react"
+import { NextUIProvider } from "./NextUIProvider"
 
 export function Provider(props: PropsWithChildren) {
   return <>

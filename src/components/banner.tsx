@@ -1,4 +1,4 @@
-import { Image } from '@nextui-org/react'
+import { Image } from "@nextui-org/react"
 
 interface Props {
   pathname?: string

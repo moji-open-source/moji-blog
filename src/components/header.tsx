@@ -1,6 +1,6 @@
-import { Avatar } from '@nextui-org/react'
+import { Avatar } from "@nextui-org/react"
 
-import AvatarImg from '#/assets/avatar.jpg'
+import AvatarImg from "#/assets/avatar.jpg"
 
 export function Header() {
   return (

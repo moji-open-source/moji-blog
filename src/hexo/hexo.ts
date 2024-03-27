@@ -1,7 +1,7 @@
-import { cache } from 'react'
-import Hexo from 'hexo'
-import fs from 'fs'
-import { join } from 'path'
+import { cache } from "react"
+import Hexo from "hexo"
+import fs from "fs"
+import { join } from "path"
 
 let __SECRET_HEXO_INSTANCE__: Hexo | null = null
 
@@ -12,11 +12,11 @@ export const initHexo = cache(async function initHexo() {
   const hexo = new Hexo(process.cwd(), {
     // silent: true,
     // 在 next dev 时包含草稿
-    draft: process.env.NODE_ENV !== 'production'
+    draft: process.env.NODE_ENV !== "production"
   })
 
-  const dbPath = join(hexo.base_dir, 'db.json')
-  if (process.env.NODE_ENV !== 'production') {
+  const dbPath = join(hexo.base_dir, "db.json")
+  if (process.env.NODE_ENV !== "production") {
     if (fs.existsSync(dbPath)) {
       await fs.promises.unlink(dbPath)
     }
@@ -27,7 +27,7 @@ export const initHexo = cache(async function initHexo() {
 
   if (hexo.env.init && hexo._dbLoaded) {
     if (!fs.existsSync(dbPath)) {
-      if (process.env.NODE_ENV === 'production') {
+      if (process.env.NODE_ENV === "production") {
         await hexo.database.save()
       }
     }

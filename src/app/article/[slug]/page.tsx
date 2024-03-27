@@ -1,11 +1,11 @@
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-import initHexo from '#/hexo/hexo'
-import 'prismjs/plugins/line-numbers/prism-line-numbers'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import initHexo from "#/hexo/hexo"
+import "prismjs/plugins/line-numbers/prism-line-numbers"
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 
-import styles from './article.module.css'
-import './theme.css'
+import styles from "./article.module.css"
+import "./theme.css"
 
 interface Props {
   params: {
@@ -21,20 +21,20 @@ interface Props {
 // dynamic metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
-    title: 'Clover\'sBlog - Rust 从入门到入土'
+    title: "Clover'sBlog - Rust 从入门到入土"
   }
 }
 
 export async function generateStaticParams() {
   return [{
-    slug: 'java-base'
+    slug: "java-base"
   }]
 }
 
 export default async function PostPage(props: Props) {
   const hexo = await initHexo()
 
-  const [post] = hexo.database.model('Post').toArray()
+  const [post] = hexo.database.model("Post").toArray()
 
   if (!post) {
     return notFound()

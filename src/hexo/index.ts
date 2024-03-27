@@ -1,5 +1,5 @@
-import { initHexo } from './hexo'
-export * from './hexo'
+import { initHexo } from "./hexo"
+export * from "./hexo"
 
 export async function getHexoPostBySlug(slug: string) {
   const hexo = await initHexo()
@@ -7,7 +7,7 @@ export async function getHexoPostBySlug(slug: string) {
   const path = `source/_posts/${slug}`
   // console.log(path);
 
-  const post = hexo.database.model('Page').findOne({
+  const post = hexo.database.model("Page").findOne({
     path: {
       eq: `post/${slug}/`
     }
