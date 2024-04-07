@@ -24,6 +24,7 @@
   --fgColor-default: #1f2328;
   --base-text-weight-normal: 400;
   --fgColor-muted: #636c76;
+  --body-font-size: 0.875rem;
 }
 
 body {
@@ -43,6 +44,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial,
    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.5;
+  font-size: var(--body-font-size, 14px)
 }
 
 .text-normal {

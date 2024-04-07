@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="light">
-      <body className={inter.className}>
+      <body>
         <SpeedInsights />
         <Provider>
           <div className="trm-app-frame">

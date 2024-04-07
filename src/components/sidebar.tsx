@@ -9,8 +9,6 @@ import Styles from './sidebar.module.css'
 import { OrganizationIcon } from "#/components/icons/organization-icon"
 import { GitHubIcon } from "#/components/icons/github-icon"
 
-// import MarkerSVG from '#/assets/marker.svg'
-
 export function Sidbar() {
 
   return (
