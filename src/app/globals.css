@@ -25,6 +25,13 @@
   --base-text-weight-normal: 400;
   --fgColor-muted: #636c76;
   --body-font-size: 0.875rem;
+  --base-text-weight-semibold: 600;
+  --fgColor-muted: #636c76;
+  --borderColor-default: #d0d7de;
+  --fgColor-accent: #0969da;
+  --borderColor-muted: #d0d7deb3;
+  --bgColor-default: #ffffff;
+  --bgColor-neutral-muted: #afb8c133;
 }
 
 body {
@@ -123,4 +130,18 @@ body::before {
   width: calc(100% - 60px);
   opacity: 0.3;
   @apply before:rounded-b-md bg-bg1;
+}
+
+a {
+  color: var(--fgColor-accent);
+  text-decoration: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+tt, code, samp {
+  font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);
+  font-size: 12px;
 }

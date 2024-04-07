@@ -41,7 +41,7 @@ export default async function PostPage(props: Props) {
   }
 
   return <>
-    <div id="article-container" className={styles.TrmPublication}
+    <div id="article-container" className={styles.MarkdownBody}
       dangerouslySetInnerHTML={{ __html: post.content }}></div>
   </>
 }

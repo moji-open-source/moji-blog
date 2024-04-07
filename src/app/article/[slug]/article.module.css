@@ -1,141 +1,118 @@
-.TrmPublication {
-  word-break: break-all;
-  color: #333;
+.MarkdownBody {
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; */
   font-size: 16px;
   line-height: 1.5;
-  padding: 0 10px;
-  margin: 0 auto;
-  max-width: 700px;
-  font-weight: 300;
+  word-wrap: break-word;
+
+  --color-border-default: #e6eaed;
+  --color-bg-code: #f8f8f8;
 }
 
-.TrmPublication p strong {
-  font-weight: 400;
+
+.MarkdownBody h1 {
+  padding-bottom: .3em;
+  font-size: 2em;
 }
 
-.TrmPublication p + p {
-  margin-bottom: 20px;
+.MarkdownBody h1,
+.MarkdownBody h2,
+.MarkdownBody h3,
+.MarkdownBody h4,
+.MarkdownBody h5,
+.MarkdownBody h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: var(--base-text-weight-semibold, 600);
+  line-height: 1.25;
 }
 
-.TrmPublication h1,
-.TrmPublication h2,
-.TrmPublication h3,
-.TrmPublication h4,
-.TrmPublication h5 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+.MarkdownBody h2 {
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--borderColor-muted);
 }
 
-.TrmPublication h3:before,
-.TrmPublication h4:before,
-.TrmPublication h5:before {
-  content: "#";
-  margin-right: 5px;
+.MarkdownBody h3 {
+  font-size: 1.25em;
 }
 
-.TrmPublication h1,
-.TrmPublication h2 {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+.MarkdownBody blockquote {
+  padding: 0 1em;
+  color: var(--fgColor-muted);
+  border-left: .25em solid var(--borderColor-default);
 }
 
-.TrmPublication h1 {
-  @apply text-2xl;
-  position: relative;
-  padding-bottom: 10px;
+.MarkdownBody p,
+.MarkdownBody blockquote,
+.MarkdownBody ul,
+.MarkdownBody ol,
+.MarkdownBody dl,
+.MarkdownBody table,
+.MarkdownBody pre,
+.MarkdownBody details {
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
-.TrmPublication h2 {
-  @apply text-xl;
-  position: relative;
-  padding-bottom: 10px;
+.MarkdownBody a {
+  text-decoration: underline;
+  text-underline-offset: .2rem;
 }
 
-.TrmPublication h3 {
+/********************** table begin ***********************/
+.MarkdownBody table {
+  display: block;
+  width: 100%;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
 }
 
-.TrmPublication ul {
-  padding: 0;
-  margin-left: 10px;
-  margin-bottom: 20px;
+.MarkdownBody table tr:nth-child(2n) {
+  background-color: var(--bgColor-muted);
 }
 
-.TrmPublication ul li {
-  position: relative;
-  list-style-type: none;
-  padding-left: 20px;
+.MarkdownBody table tr {
+  background-color: var(--bgColor-default);
+  border-top: 1px solid var(--borderColor-muted);
 }
 
-.TrmPublication a {
-  color: #4183c4;
-  font-weight: 300;
+.MarkdownBody table th,
+.MarkdownBody table td {
+  padding: 6px 13px;
+  border: 1px solid var(--borderColor-default);
 }
 
-.TrmPublication blockquote {
-  color: #777777;
-  padding: 0 20px;
-  position: relative;
-}
-
-.TrmPublication > pre,
-.TrmPublication > p,
-.TrmPublication > table,
-.TrmPublication > blockquote {
-  margin-bottom: 15px;
-}
-
-.TrmPublication blockquote > p {
+.MarkdownBody table td>:last-child {
   margin-bottom: 0;
 }
+/********************** table begin ***********************/
 
-.TrmPublication blockquote:before {
-  /* content: "\201C"; */
-  content: "";
-  width: 5px;
-  height: 100%;
-  background: #dee2e5;
-  font-size: 40px;
-  position: absolute;
-  left: 3px;
-  top: 0;
+/********************** code end ***********************/
+.MarkdownBody code, .MarkdownBody tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: var(--bgColor-neutral-muted);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  font-family: "Courier", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; 
 }
 
-.TrmPublication > pre {
-  background: #f8f8f8;
+.MarkdownBody pre[class*="language-"] code  {
+  background-color: transparent !important;
+  padding: 0;
+  border: none;
+}
+
+.MarkdownBody pre[class*="language-"] {
   padding: 10px;
-  border-radius: 3px;
-  overflow: auto;
-  border: 1px solid #e1e1e8;
+}
+
+.MarkdownBody pre[class*="language-"] {
+  border: 1px solid var(--color-border-default);
   border-radius: 5px;
+  background: var(--color-bg-code);
 }
-
-.TrmPublication > table {
-  width: 100%;
-}
-
-.TrmPublication p > code {
-  background: #f3f4f4;
-  border-radius: 5px;
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-  font-size: 14px;
-  font-family: Courier, ui-monospace, JetBrains Mono, SFMono-Regular, Menlo,
-    Monaco, Consolas, Andale Mono, Liberation Mono, Ubuntu Mono, Courier New,
-    monospace;
-}
-
-.TrmPublication > pre > code {
-  font-size: 14px;
-  font-family: Courier, ui-monospace, JetBrains Mono, SFMono-Regular, Menlo,
-    Monaco, Consolas, Andale Mono, Liberation Mono, Ubuntu Mono, Courier New,
-    monospace;
-}
-
-.TrmPublication {
-  font-family: PT Mono, Courier, ui-monospace, JetBrains Mono, SFMono-Regular,
-    Menlo, Monaco, Consolas, Andale Mono, Liberation Mono, Ubuntu Mono,
-    Courier New, monospace;
-}
+/********************** code end ***********************/
