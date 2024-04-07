@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import initHexo from '#/hexo/hexo'
 import 'prismjs/plugins/line-numbers/prism-line-numbers'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 import styles from './article.module.css'
 import './theme.css'
+import { getPostBySlug, getSlugs } from '#/core/post'
 
 interface Props {
   params: {
@@ -26,15 +26,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  return [{
-    slug: 'java-base'
-  }]
+  const slugs = await getSlugs()
+  return slugs.map(slug => ({ slug }))
 }
 
 export default async function PostPage(props: Props) {
-  const hexo = await initHexo()
 
-  const [post] = hexo.database.model('Post').toArray()
+  const post = await getPostBySlug(props.params.slug)
+
+  console.log(post);
+
 
   if (!post) {
     return notFound()

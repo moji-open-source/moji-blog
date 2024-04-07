@@ -1,39 +1,36 @@
-interface HexoPost {
+interface Post {
   /**
    * 标题
    */
-  title: string;
+  title: string
   /**
    * 内容
    */
-  content: string;
+  content: string
   /**
    * 日期
    */
-  date: string;
+  date: Date
   /**
    * 路径
    */
-  slug: string;
+  slug: string
   /**
    * 标签
    */
-  tags: string[];
+  tags: string[]
   /**
    * 分类
    */
-  categories: string[];
+  categories: string[]
   /**
    * 文章摘要
    */
-  more: string,
-  excerpt: string
-  /**
-   * id
-   */
-  _id: string
+  more: string
   /**
    * 封面
    */
   cover?: string
+  author: string[]
+  [key: string]: any
 }

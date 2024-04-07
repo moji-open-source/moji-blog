@@ -1,3 +1,11 @@
+---
+title: Rust 数据类型
+date: 2023-04-12
+lang: zh-CN
+tags: rust
+categories: NOTES
+---
+
 # 数据类型
 
 > 创建于 2023-04-12 16:59
