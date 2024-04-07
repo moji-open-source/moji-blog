@@ -20,15 +20,17 @@
 
 :root {
   --highlight-gutter-color: #f8f8f8;
-  --body-color: #5d5d5e;
   --body-bg-color: #00151f;
+  --fgColor-default: #1f2328;
+  --base-text-weight-normal: 400;
+  --fgColor-muted: #636c76;
 }
 
 body {
   @apply bg-blog-primary p-2.5;
   scroll-behavior: smooth;
   font-weight: 500;
-  color: var(--body-color, #7b7b7d);
+  color: var(--fgColor-default, #7b7b7d);
   background-color: var(--body-bg-color);
   letter-spacing: 0.05em;
   overflow-x: hidden;
@@ -38,6 +40,13 @@ body {
   height: 100vh;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial,
+   sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+}
+
+.text-normal {
+  font-weight: var(--base-text-weight-normal, 400) !important;
 }
 
 body::before {
