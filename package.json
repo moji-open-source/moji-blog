@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
+    "@shikijs/markdown-it": "^1.2.4",
     "@vercel/speed-insights": "^1.0.10",
     "dayjs": "^1.11.10",
     "fast-glob": "^3.3.2",

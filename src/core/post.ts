@@ -2,13 +2,32 @@ import fg from "fast-glob"
 import fs from "fs-extra"
 import matter from "gray-matter"
 import MarkdownIt from 'markdown-it'
-import * as path from "node:path"
+import Shikit from '@shikijs/markdown-it'
 
 const markdown = MarkdownIt({
   html: true,
   breaks: true,
   linkify: true,
 })
+
+Shikit({
+  themes: {
+    light: 'vitesse-light',
+    dark: 'vitesse-dark',
+  },
+  meta: {
+    dataLanguage: 'java'
+  },
+  parseMetaString(metaString, code, lang) {
+    return {
+      dataLanguage: lang,
+      class: `language-${lang}`
+    }
+  },
+}).then(shiki => {
+  markdown.use(shiki)
+})
+
 
 
 let __POSTS: Post[]

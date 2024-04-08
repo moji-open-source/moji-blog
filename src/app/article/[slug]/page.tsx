@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import styles from './article.module.css'
-import './theme.css'
 import { getPostBySlug, getSlugs } from '#/core/post'
 
 interface Props {
@@ -31,9 +30,6 @@ export async function generateStaticParams() {
 export default async function PostPage(props: Props) {
 
   const post = await getPostBySlug(props.params.slug)
-
-  console.log(post);
-
 
   if (!post) {
     return notFound()

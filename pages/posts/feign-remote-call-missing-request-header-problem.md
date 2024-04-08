@@ -42,7 +42,7 @@ categories: NOTES
 
 从 feign 的流程看出，它是直接给我门创建一个新的请求，并没有给我们封装浏览器给A服务发送请求时携带的请求头等信息。
 
-## 解决
+## 解析
 
 在debug过程中，发现 `executeAndDecode` 方法中在调用 `Client` 发送请求时有一个 `this.targetRequest(template);` 操作，它返回一个 `Request` ，`Client` 发送请求时代的就是这个request对象。
 
