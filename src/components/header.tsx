@@ -1,6 +1,7 @@
-import { Avatar } from '@nextui-org/react'
+import { Image } from '@nextui-org/react'
+import Link from 'next/link'
 
-import AvatarImg from '#/assets/avatar.jpg'
+import LogoImg from '#/assets/logo@185 × 185.webp'
 
 export function Header() {
   return (
@@ -9,7 +10,9 @@ export function Header() {
     >
       <div className="container mx-auto flex items-center h-full">
         <div className="left-0">
-          <Avatar src={AvatarImg.src} />
+          <Link href="/">
+            <Image src={LogoImg.src} width={40} height={40} radius="none" />
+          </Link>
         </div>
       </div>
     </header>
