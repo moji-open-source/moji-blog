@@ -105,6 +105,12 @@
   background-color: transparent !important;
   padding: 0;
   border: none;
+  word-wrap: normal;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
 }
 
 .MarkdownBody pre[class*="language-"] {
