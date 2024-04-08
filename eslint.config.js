@@ -1,4 +1,4 @@
-import antfu from "@antfu/eslint-config"
+import antfu from '@antfu/eslint-config'
 
 export default antfu(
   {
@@ -7,14 +7,11 @@ export default antfu(
   {
     rules: {
       'semi': [
-        "error",
-        "never",
+        'error',
+        'never',
       ],
-      "prefer-const": "error",
-      "quotes": [
-        "error",
-        "double",
-      ],
+      'prefer-const': 'error',
+      'react-refresh/only-export-components': 'off',
     },
   },
 )

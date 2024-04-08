@@ -40,7 +40,6 @@ help: consider giving `num` an explicit type
 For more information about this error, try `rustc --explain E0282`.
 error: could not compile `datatype` due to previous error
 
-
 ```
 
 正确做法应该是这样：

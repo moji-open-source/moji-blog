@@ -17,8 +17,17 @@ interface Props {
 
 // dynamic metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await getPostBySlug(params.slug)
+  const { title } = post ?? {}
+
+  if (title) {
+    return {
+      title: `Clover'sBlog - ${title}`,
+    }
+  }
+
   return {
-    title: 'Clover\'sBlog - Rust 从入门到入土'
+    title: `Clover'sBlog`,
   }
 }
 
@@ -28,15 +37,19 @@ export async function generateStaticParams() {
 }
 
 export default async function PostPage(props: Props) {
-
   const post = await getPostBySlug(props.params.slug)
 
-  if (!post) {
+  if (!post)
     return notFound()
-  }
 
-  return <>
-    <div id="article-container" className={styles.MarkdownBody}
-      dangerouslySetInnerHTML={{ __html: post.content }}></div>
-  </>
+  return (
+    <>
+      <div
+        id="article-container"
+        className={styles.MarkdownBody}
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      >
+      </div>
+    </>
+  )
 }

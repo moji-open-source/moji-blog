@@ -1,8 +1,10 @@
-import { describe, test, expect } from "vitest"
-import { getPostList } from "./post"
+import { describe, expect, it } from 'vitest'
+import { getPostList } from './post'
 
-describe("post core", () => {
-  test("shold return all posts", async () => {
+describe('post core', () => {
+  it('shold return all posts', async () => {
     const posts = await getPostList()
+
+    expect(posts).not.toBeFalsy()
   })
 })
