@@ -31,7 +31,7 @@ export default function RootLayout({
                   <div className="container w-full mx-auto px-5">
                     <div className="container mx-auto grid grid-rows-1 grid-cols-[320px_1fr] gap-10 z-0">
                       <Sidbar />
-                      <div className="z-[2]">{children}</div>
+                      <div className="z-[2] overflow-hidden">{children}</div>
                     </div>
                   </div>
                 </div>

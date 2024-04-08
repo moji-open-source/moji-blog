@@ -126,6 +126,7 @@
 .MarkdownBody pre[class*="language-"] {
   /* padding: 20px 10px; */
   position: relative;
+  overflow-x: auto;
 }
 
 .MarkdownBody pre[class*="language-"]::after {
