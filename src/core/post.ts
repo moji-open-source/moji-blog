@@ -3,7 +3,7 @@ import fs from 'fs-extra'
 import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
 
-import { useShiki } from '#/core/shiki'
+import { useShiki } from './shiki'
 
 const markdown = MarkdownIt({
   html: true,
