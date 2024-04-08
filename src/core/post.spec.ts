@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { getPostBySlug, getPostList } from './post'
+import { getAllCategories, getCateforieTotal, getPostBySlug, getPostList } from './post'
 
 vi.mock('fast-glob', () => {
   return {
@@ -20,7 +20,7 @@ autor: Clover
 date: 2024-04-07 21:45:09
 lang: zh-CN
 tags: java,
-categories: NOTES
+categories: NOTES, rust
 ---
 hello world
       `
@@ -47,5 +47,14 @@ describe('post core', () => {
     const postNotExists = await getPostBySlug('postsfa')
 
     expect(postNotExists).toBeFalsy()
+  })
+
+  it('should get all categorie', async () => {
+    const categories = await getAllCategories()
+
+    expect(categories).toStrictEqual(['NOTES', 'rust'])
+
+    const cateforieTotal = await getCateforieTotal()
+    expect(cateforieTotal).toBe(2)
   })
 })

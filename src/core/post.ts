@@ -80,3 +80,20 @@ export async function getSlugs() {
   const posts = await getPostList()
   return posts.map(it => it.slug)
 }
+
+let __CATEGORIES: string[]
+export async function getAllCategories() {
+  if (__CATEGORIES)
+    return __CATEGORIES
+
+  const posts = await getPostList()
+  return __CATEGORIES = posts.reduce((acc, { categories = [] }) => {
+    acc.push(...categories.map(str => str.trim()))
+    return acc
+  }, [] as string[])
+}
+
+export async function getCateforieTotal() {
+  const categories = await getAllCategories()
+  return categories.length
+}

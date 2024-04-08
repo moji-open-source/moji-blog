@@ -3,6 +3,9 @@
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
 
   --color-border-default: #e6eaed;
   --color-bg-code: #f8f8f8;
