@@ -1,7 +1,7 @@
 import { Image } from '@nextui-org/react'
 import Link from 'next/link'
 
-import LogoImg from '#/assets/logo@185 × 185.webp'
+import LogoImg from '#/assets/logo@185×185.webp'
 
 export function Header() {
   return (
