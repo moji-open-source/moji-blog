@@ -1,12 +1,12 @@
 import path from 'node:path'
 import process from 'node:process'
 
-function buildEslintCommand(filenames) {
-  return `next lint --fix --file ${filenames
-    .map(f => path.relative(process.cwd(), f))
-    .join(' --file ')}`
+function createCommand(prefix, join) {
+  return filenames => `${prefix} ${filenames.map(f => path.relative(process.cwd(), f)).join(` ${join} `)}`
 }
 
+const buildEslintCommand = createCommand('eslint --fix ', '')
+
 export default {
-  '*.{js,jsx,ts,tsx}': 'eslint --fix',
+  '*.{js,jsx,ts,tsx}': [buildEslintCommand],
 }
