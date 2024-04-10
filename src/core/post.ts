@@ -35,10 +35,10 @@ export async function getPostList() {
       date: new Date(data.date),
       content: html,
       author: ['Clover'],
-      categories: data.categories?.split(','),
+      categories: data.categories?.split(',') ?? [],
       more: '',
       slug: fileNameAlias,
-      tags: data.tags?.split(','),
+      tags: data.tags?.split(',') ?? [],
       title: data.title,
       cover: data.cover,
     }
