@@ -16,7 +16,7 @@ Creator of [MojiChat](https://github.com/moji-open-source/MojiChat)[MojiBlog](ht
 开发了 [MojiChat](https://github.com/moji-open-source/MojiChat)[MojiBlog](https://github.com/moji-open-source/moji-blog)（还在开发中😂）
 
 I was born in 2002 years, Since i begin code in 17 year, I have used c# 、js、ts and java(working using), of ts is master language.
-我于2002年诞生到这个世界，从 17 年看开始写代码，期间使用过 c#、js、ts和java（目前工作在用），ts 被我作为主要语言
+我于2002年诞生到这个世界，从 17 年开始写代码，期间使用过 c#、js、ts和java（目前工作在用），ts 被我作为主要语言
 
 I may use golang and rust in the future. I'm preparing for this!
 
