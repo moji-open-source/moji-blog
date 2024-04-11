@@ -117,7 +117,7 @@
 
 .MarkdownBody pre[class*="language-"] code {
   background-color: transparent !important;
-  padding: 0;
+  padding: 10px;
   border: none;
   word-wrap: normal;
   direction: ltr;
@@ -125,10 +125,8 @@
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-}
-
-.MarkdownBody pre[class*="language-"] {
-  padding: 10px;
+  overflow: auto;
+  display: block;
 }
 
 .MarkdownBody pre[class*="language-"] {
@@ -138,9 +136,8 @@
 }
 
 .MarkdownBody pre[class*="language-"] {
-  /* padding: 20px 10px; */
   position: relative;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .MarkdownBody pre[class*="language-"]::after {
