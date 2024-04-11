@@ -97,3 +97,41 @@ export async function getCateforieTotal() {
   const categories = await getAllCategories()
   return categories.length
 }
+
+async function getPages() {
+  const files = await fg('pages/*.md')
+
+  return await Promise.all(files.map(async (file) => {
+    const raw = await fs.readFile(file, 'utf-8')
+    const { data, content } = matter(raw)
+
+    const html = markdown.render(content)
+
+    const [_, fileFullPath] = file.match(/pages\/(.*)\.md/) ?? []
+    const fileNameAlias = fileFullPath.replaceAll('/', '-')
+
+    return {
+      content: html,
+      page: fileNameAlias,
+      meta: data,
+    }
+  }))
+}
+
+let __PAGE_MAP: Record<string, { content: string, meta: any, page: string }>
+export async function getPageMap() {
+  if (__PAGE_MAP)
+    return __PAGE_MAP
+
+  const pages = await getPages()
+
+  return __PAGE_MAP = pages.reduce((acc, curr) => {
+    acc[curr.page] = curr
+    return acc
+  }, {} as Record<string, any>)
+}
+
+export async function getPageByName(name: string) {
+  const pages = await getPageMap()
+  return pages[name]
+}
