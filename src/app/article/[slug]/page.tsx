@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import styles from './article.module.css'
 import { getPostBySlug, getSlugs } from '#/core/post'
+import { PostView } from '#/components/post-view'
 
 interface Props {
   params: {
@@ -44,12 +44,7 @@ export default async function PostPage(props: Props) {
 
   return (
     <>
-      <div
-        id="article-container"
-        className={styles.MarkdownBody}
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      >
-      </div>
+      <PostView html={post.content} />
     </>
   )
 }
