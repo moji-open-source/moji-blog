@@ -12,30 +12,12 @@ const config: Config = {
   theme: {
     container: {
       screens: {
-        '2xl': '100%',
-        'sm': '100%',
-        'md': '100%',
-        'lg': '1024px',
-        'xl': '1140px',
-      },
-    },
-    extend: {
-      colors: {
-        'blog-primary': '#00151f',
-        'bg2': '#f4f5f7',
-        'bg1': '#fcfcfe',
-      },
-      textShadow: {
-        title: '0 1px 10px rgba(0, 0, 0, 0.3)',
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        lg: '650px',
+        xl: '650px',
       },
     },
   },
-  darkMode: 'class',
+  darkMode: 'media',
   plugins: [nextui(), plugin(({ matchUtilities, theme }) => {
     matchUtilities(
       {

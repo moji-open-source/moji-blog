@@ -6,142 +6,65 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary-50, #afb42b) transparent;
-}
-
-*,
-::after,
-::before {
-  box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary-50, #afb42b) transparent;
 }
 
 :root {
-  --highlight-gutter-color: #f8f8f8;
-  --body-bg-color: #00151f;
-  --fgColor-default: #1f2328;
-  --base-text-weight-normal: 400;
-  --fgColor-muted: #636c76;
+  /* size */
   --body-font-size: 0.875rem;
+
+  /* text */
   --base-text-weight-semibold: 600;
-  --fgColor-muted: #636c76;
-  --borderColor-default: #d0d7de;
-  --borderColor-muted: #d0d7deb3;
-  --bgColor-default: #ffffff;
-  --bgColor-neutral-muted: #afb8c133;
+
+  /* color */
+  --background-color1: #1d1f22;
+  --background-color2: #2b2d30;
+  --font-color: #BBBBBB;
 }
 
 body {
-  scroll-behavior: smooth;
-  color: var(--fgColor-default, #7b7b7d);
-  background-color: var(--body-bg-color);
-  letter-spacing: 0.05em;
-  overflow-x: hidden;
-  margin: 0;
-  margin-right: calc(100% - 100vw);
-  padding: 10px;
-  height: 100vh;
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.5;
-  font-size: var(--body-font-size, 14px)
+  font-size: var(--body-font-size, 14px);
+  color: var(--font-color);
+  /* background-color: var(--background-color1); */
 }
 
-.text-normal {
-  font-weight: var(--base-text-weight-normal, 400) !important;
+::-webkit-scrollbar {
+  height: 1rem;
+  width: .5rem;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  left: 10px;
-  top: 10px;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
-  z-index: 9999;
-  pointer-events: none;
-  box-shadow: 0 0 0 20px var(--body-bg-color);
-  border-radius: 10px;
-  outline: var(--body-bg-color) solid 10px;
+::-webkit-scrollbar-thumb {
+  --tw-border-opacity: 1;
+  background-color: hsla(0, 0%, 89%, .8);
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+  border-radius: 9999px;
+  border-width: 1px;
 }
 
-.highlight .gutter {
-  width: 28px;
-  color: var(--highlight-gutter-color);
-  background-color: var(--highlight-gutter-bg-color);
-  text-align: center;
-  padding: 10px 4px !important;
-  user-select: none;
-  display: block;
-}
-
-.trm-app-frame {
-  border-radius: 10px;
-  width: 100%;
-  overflow: hidden;
-  background-color: var(--theme-bg2-color, #f4f5f7);
-  box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
-  transition: all 0.4s ease-in-out;
-}
-
-#trm-dynamic-content {
-  height: 100%;
-}
-
-.trm-swup-animation {
-  transition: all 0.6s ease-in-out;
-  transition-delay: 0.6s;
-}
-
-.trm-scroll-container {
-  transition: opacity 0.6s;
-}
-
-.trm-top-bar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.trm-app-frame .trm-content-start {
-  margin: 0 40px;
-}
-
-.card-decoration-mask:after {
-  position: absolute;
-  left: 30px;
-  height: 8px;
-  width: calc(100% - 60px);
-  opacity: 0.3;
-  @apply after:rounded-b-md bg-bg1;
-}
-
-.card-decoration-mask:before {
-  top: -8px;
-  position: absolute;
-  left: 30px;
-  height: 8px;
-  width: calc(100% - 60px);
-  opacity: 0.3;
-  @apply before:rounded-b-md bg-bg1;
-}
-
-a {
-  color: var(--fgColor-accent);
-  text-decoration: none;
-}
-
-a {
+::-webkit-scrollbar-track {
   background-color: transparent;
+  border-radius: 9999px;
 }
 
-tt,
-code,
-samp {
-  /* font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace); */
-  font-size: 12px;
+@media (prefers-color-scheme: dark) {
+
+  .shiki {
+    --shiki-dark-bg: #282a2d !important;
+  }
+
+  .shiki,
+  .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    /* 可选，用于定义字体样式 */
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 100%, .1);
+  }
 }

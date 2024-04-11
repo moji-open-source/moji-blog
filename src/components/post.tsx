@@ -24,7 +24,7 @@ export async function PostList() {
         {posts.map((it, index) => {
           return (
             <div key={index} className="w-full rounded-lg grid grid-cols-1 shadow-lg overflow-hidden bg-white">
-              <Link href={`article/${it.slug}`}>
+              <Link href={`posts/${it.slug}`}>
                 <Image src="/cover.jpeg" alt="" isZoomed isBlurred className="w-full overflow-hidden rounded-t-lg" radius="none" />
               </Link>
               <div className="p-8 box-border">
@@ -39,7 +39,7 @@ export async function PostList() {
                     })}
                   </ul>
                 </div>
-                <Link href={`article/${it.slug}`}>
+                <Link href={`posts/${it.slug}`}>
                   <h1 className="text-base font-medium">
                     {' '}
                     {it.title}

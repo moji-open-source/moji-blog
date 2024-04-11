@@ -1,15 +1,16 @@
 .MarkdownBody {
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; */
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
-  background: #fff;
-  padding: 40px;
   border-radius: 10px;
 
   --color-border-default: #e6eaed;
   --color-bg-code: #f8f8f8;
   --fgColor-accent: #0969da;
+
+  /* --shiki-dark: #3b3b3b;
+  --shiki-dark-bg: #000; */
+
 }
 
 .MarkdownBody strong {
@@ -42,7 +43,7 @@
 .MarkdownBody h2 {
   padding-bottom: .3em;
   font-size: 1.5em;
-  border-bottom: 1px solid var(--borderColor-muted);
+  border-bottom: 1px solid var(--borderColor-muted, #000);
 }
 
 .MarkdownBody h3 {
@@ -115,7 +116,7 @@
   font-family: "Courier", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
-.MarkdownBody pre[class*="language-"] code {
+.MarkdownBody pre[data-language] code {
   background-color: transparent !important;
   padding: 10px;
   border: none;
@@ -129,18 +130,15 @@
   display: block;
 }
 
-.MarkdownBody pre[class*="language-"] {
-  border: 1px solid var(--color-border-default);
+.MarkdownBody pre[data-language] {
   border-radius: 5px;
-  background: var(--color-bg-code);
 }
 
-.MarkdownBody pre[class*="language-"] {
+.MarkdownBody pre[data-language] {
   position: relative;
-  overflow-x: hidden;
 }
 
-.MarkdownBody pre[class*="language-"]::after {
+.MarkdownBody pre[data-language]::after {
   opacity: 0.2;
   content: attr(data-language);
   font-size: 1.625rem;
@@ -156,3 +154,12 @@
 }
 
 /********************** code end ***********************/
+/********************** img begin ***********************/
+.MarkdownBody p>img {
+  width: 100%;
+  border-radius: .5rem;
+  transform: scale(1.05);
+  margin: 2.6em 0;
+}
+
+/********************** img end ***********************/

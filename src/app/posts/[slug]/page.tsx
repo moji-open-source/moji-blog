@@ -44,7 +44,9 @@ export default async function PostPage(props: Props) {
 
   return (
     <>
-      <PostView html={post.content} />
+      <div className="mx-auto container">
+        <PostView html={post.content} />
+      </div>
     </>
   )
 }

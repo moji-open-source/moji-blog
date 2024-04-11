@@ -9,6 +9,8 @@ export default async function Page() {
     return notFound()
 
   return (
-    <PostView html={page.content} />
+    <div className="mx-auto px-6 container">
+      <PostView html={page.content} />
+    </div>
   )
 }

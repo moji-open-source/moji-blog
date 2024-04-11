@@ -11,7 +11,7 @@ import { GitHubIcon } from '#/components/icons/github-icon'
 
 export function Sidbar() {
   return (
-    <div className="bg-white w-full rounded-md h-screen p-10 box-border shadow-md translate-y-[-410px] z-[2] sticky top-[510px]
+    <div className="w-full rounded-md h-screen p-10 box-border shadow-md translate-y-[-410px] z-[2] sticky top-[510px]
     card-decoration-mask before:content-['']"
     >
       <Header />
@@ -28,7 +28,7 @@ function Header() {
           <Image src={MyAvatar} alt="" />
         </Avatar>
 
-        <h5 className="text-lg font-[800] text-gray-700 mb-5">CloverYou</h5>
+        <h5 className="text-lg font-[700] mb-5">CloverYou</h5>
 
         <span className="mb-5 text-sm text-default-700">童话只美在真实却从不续写</span>
         <Button color="primary" variant="faded" className="w-full mb-5" size="md">Follow</Button>
