@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import dayjs from 'dayjs'
 import { getPostBySlug, getSlugs } from '#/core/post'
 import { PostView } from '#/components/post-view'
 
@@ -42,9 +43,22 @@ export default async function PostPage(props: Props) {
   if (!post)
     return notFound()
 
+  function getLocaleString(date: Date | string, lang: string) {
+    return dayjs(date).toDate().toLocaleString(lang, { dateStyle: 'medium' })
+  }
+
   return (
     <>
       <div className="mx-auto container">
+        <div className="prose mb-8">
+          <h1>{post.title}</h1>
+          <p className="opacity-50">
+            {getLocaleString(post.date, 'en')}
+            <span>
+              {` · ${post.duration}`}
+            </span>
+          </p>
+        </div>
         <PostView html={post.content} />
       </div>
     </>

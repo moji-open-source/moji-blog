@@ -7,6 +7,7 @@
   --color-bg-code: #f8f8f8;
   --fgColor-accent: #0969da;
   --fg-deeper: #000;
+  --fg-deep: #222;
 
   /* --shiki-dark: #3b3b3b;
   --shiki-dark-bg: #000; */
@@ -15,6 +16,7 @@
 
 .MarkdownBody strong {
   font-weight: 600;
+  color: var(--fg-deep);
 }
 
 .MarkdownBody ol {
@@ -24,36 +26,64 @@
 }
 
 .MarkdownBody h1 {
-  padding-bottom: .3em;
-  font-size: 2em;
-}
-
-.MarkdownBody h1,
-.MarkdownBody h2,
-.MarkdownBody h3,
-.MarkdownBody h4,
-.MarkdownBody h5,
-.MarkdownBody h6 {
-  margin-top: 24px;
-  margin-bottom: 16px;
-  font-weight: var(--base-text-weight-semibold, 600);
-  line-height: 1.25;
   color: var(--fg-deeper);
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: .8888889em;
+  line-height: 1.1111111;
 }
 
 .MarkdownBody h2 {
-  padding-bottom: .3em;
+  color: var(--fg-deeper);
+  font-weight: 700;
   font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
 }
 
 .MarkdownBody h3 {
+  color: inherit;
+  font-weight: 600;
   font-size: 1.25em;
+  margin-bottom: .6em;
+  line-height: 1.6;
+  opacity: .7;
+}
+
+.MarkdownBody h4 {
+  color: inherit;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+  line-height: 1.5;
+}
+
+.MarkdownBody h6 {
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  opacity: .5;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
 .MarkdownBody blockquote {
-  padding: 0 1em;
-  color: var(--fgColor-muted);
-  border-left: .25em solid var(--borderColor-default);
+  color: inherit;
+  border-left-width: .25rem;
+  border-color: #7d7d7d4d;
+  quotes: "“" "”" "‘" "’";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  font-style: normal;
+  line-height: 1.6em;
+  padding: .5em 1em;
+  margin-left: -1.1em;
+}
+
+.MarkdownBody blockquote>* {
+  opacity: 0.7;
 }
 
 .MarkdownBody p,
@@ -78,11 +108,13 @@
 
 /********************** table begin ***********************/
 .MarkdownBody table {
-  display: block;
   width: 100%;
-  width: max-content;
-  max-width: 100%;
-  overflow: auto;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: .875em;
+  line-height: 1.7142857;
 }
 
 .MarkdownBody table tr:nth-child(2n) {
@@ -94,14 +126,28 @@
   border-top: 1px solid var(--borderColor-muted);
 }
 
-.MarkdownBody table th,
-.MarkdownBody table td {
-  padding: 6px 13px;
-  border: 1px solid var(--borderColor-default);
+.MarkdownBody thead {
+  color: var(--fg-deeper);
+  font-weight: 600;
+  border-bottom-width: 1px;
+  border-bottom-color: #8882;
 }
 
-.MarkdownBody table td>:last-child {
-  margin-bottom: 0;
+.MarkdownBody thead th {
+  vertical-align: bottom;
+  padding-right: .5714286em;
+  padding-bottom: .5714286em;
+  padding-left: .5714286em;
+}
+
+.MarkdownBody tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: #8882;
+}
+
+.MarkdownBody tbody td {
+  vertical-align: top;
+  padding: .5714286em;
 }
 
 /********************** table begin ***********************/

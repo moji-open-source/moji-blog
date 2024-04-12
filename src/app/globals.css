@@ -10,7 +10,7 @@
 
 :root {
   /* size */
-  --body-font-size: 0.875rem;
+  --body-font-size: 1rem;
 
   /* text */
   --base-text-weight-semibold: 600;
@@ -32,7 +32,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  height: 1rem;
+  height: .5rem;
   width: .5rem;
 }
 
@@ -83,4 +83,12 @@ body {
 .navbar-content a {
   opacity: .6;
   @apply hover:opacity-100
+}
+
+.prose h1 {
+  padding-bottom: .3em;
+  font-size: 2.25em;
+  color: var(--fg-deeper);
+  font-weight: var(--base-text-weight-semibold, 600);
+  line-height: 1.25;
 }
