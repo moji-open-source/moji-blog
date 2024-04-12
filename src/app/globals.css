@@ -26,6 +26,8 @@
   --fg-deeper: #000;
   --fg-deep: #222;
 
+  --scrollbar-thumb-bg: hsla(0, 0%, 89%, .8);
+
   --enter-stage: 0;
   --enter-step: 90ms;
   --enter-initial: 0ms;
@@ -47,7 +49,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   --tw-border-opacity: 1;
-  background-color: hsla(0, 0%, 89%, .8);
+  background-color: var(--scrollbar-thumb-bg);
   border-color: rgba(255, 255, 255, var(--tw-border-opacity));
   border-radius: 9999px;
   border-width: 1px;
@@ -63,6 +65,7 @@ body {
   --fg-deeper: #fff;
   --fg-deep: #ddd;
   --color-border-default: hsl(var(--nextui-default-200));
+  --scrollbar-thumb-bg: hsla(0, 0%, 100%, .1);
 }
 
 .dark .shiki {
@@ -79,9 +82,9 @@ body {
   text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
-.dark::-webkit-scrollbar-thumb {
-  background-color: hsla(0, 0%, 100%, .1);
-}
+/* .dark::-webkit-scrollbar-thumb {
+  background-color: --scrollbar-thumb-bg;
+} */
 
 .text-stroke-hex-aaa {
   --un-text-stroke-opacity: 1;
