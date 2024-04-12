@@ -46,9 +46,9 @@ export function Header() {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#" onClick={test}>
+            <div color="foreground" className="cursor-pointer" onClick={test}>
               <span className="icon-[ph--sun] dark:icon-[ph--moon] !w-5 !h-5 align-text-bottom"></span>
-            </Link>
+            </div>
           </NavbarItem>
         </NavbarContent>
 
