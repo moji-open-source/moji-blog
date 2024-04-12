@@ -20,6 +20,8 @@ export async function PostList() {
 
   const group = Object.entries(posts)
 
+  group.sort(([a], [b]) => Number(b ?? 0) - Number(a ?? 0))
+
   function getLocaleString(date: Date | string, lang: string) {
     return dayjs(date).toDate().toLocaleString(lang, { month: 'long', day: 'numeric' })
   }
