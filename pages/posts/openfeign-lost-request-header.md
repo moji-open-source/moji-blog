@@ -1,5 +1,5 @@
 ---
-title: Feign远程调用丢失请求头问题
+title: OpenFeign 远程调用丢失请求头
 autor: Clover
 date: 2024-04-07 21:45:09
 lang: zh-CN
