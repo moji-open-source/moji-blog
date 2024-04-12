@@ -6,10 +6,10 @@ import { GitHubIcon } from '#/components/icons/github-icon'
 
 export function Header() {
   return (
-    <Navbar maxWidth="full" height="80px">
+    <Navbar maxWidth="full">
       <Link href="/" color="foreground">
         <NavbarBrand>
-          <Image src={LogoImg.src} width={40} height={40} radius="none" />
+          <Image src={LogoImg.src} width={25} height={25} radius="none" />
           <p className="font-bold text-inherit ml-2">CLOVER</p>
         </NavbarBrand>
       </Link>
