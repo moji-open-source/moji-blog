@@ -6,7 +6,7 @@ interface PostViewProps extends React.PropsWithChildren {
 export function PostView(props: PostViewProps) {
   return (
     <div
-      className={styles.MarkdownBody}
+      className={`${styles.MarkdownBody} slide-enter-content`}
     >
       <div dangerouslySetInnerHTML={{ __html: props.html }} />
       {props.children}
