@@ -47,6 +47,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.11.0",
+    "@iconify-json/humbleicons": "^1.1.10",
+    "@iconify/tailwind": "^0.1.4",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^14.0.0",
     "@types/node": "^20.11.27",
