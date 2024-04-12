@@ -5,6 +5,7 @@ date: 2024-04-07 21:45:09
 lang: zh-CN
 tags: java,
 categories: NOTES
+pid: 67890-877324
 ---
 
 在业务中，需要使用A、B两个模块，这些模块使用了SpringSession共享Session数据。在B模块中的业务需要用户登录后才能操作。当A调用B的业务时，在B模块中获取不到用户的Session信息，导致B模块判定该请求用户没有登录导致A模块拿不到所需数据。问题是A模块可以拿到该用户的登录信息并且，已经使用了SpringSession进行共享Session数据。

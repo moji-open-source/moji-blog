@@ -1,6 +1,5 @@
 .MarkdownBody {
   font-size: 16px;
-  line-height: 1.5;
   word-wrap: break-word;
   border-radius: 10px;
 
@@ -39,12 +38,12 @@
   margin-bottom: 16px;
   font-weight: var(--base-text-weight-semibold, 600);
   line-height: 1.25;
+  color: var(--fg-deeper);
 }
 
 .MarkdownBody h2 {
   padding-bottom: .3em;
   font-size: 1.5em;
-  border-bottom: 1px solid var(--borderColor-muted, #000);
 }
 
 .MarkdownBody h3 {

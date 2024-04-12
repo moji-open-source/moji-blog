@@ -5,6 +5,7 @@ lang: zh-CN
 tags: rust
 categories: NOTES
 duration: 10min
+pid: 78324
 ---
 
 # 数据类型

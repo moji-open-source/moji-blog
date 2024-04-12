@@ -19,12 +19,13 @@
   --background-color1: #1d1f22;
   --background-color2: #2b2d30;
   --font-color: #555555;
+  --fg-deeper: #000;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  line-height: 1.5;
+  line-height: 1.75;
   font-size: var(--body-font-size, 14px);
   color: var(--font-color);
   /* background-color: var(--background-color1); */
@@ -51,6 +52,7 @@ body {
 @media (prefers-color-scheme: dark) {
   :root {
     --font-color: #BBBBBB;
+    --fg-deeper: #fff;
   }
 
   .shiki {
@@ -76,4 +78,9 @@ body {
   --un-text-stroke-opacity: 1;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(170 170 170 / 1);
+}
+
+.navbar-content a {
+  opacity: .6;
+  @apply hover:opacity-100
 }

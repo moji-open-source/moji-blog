@@ -33,6 +33,7 @@ export async function getPostList() {
     return {
       ...data,
       date: new Date(data.date),
+      pid: data.pid,
       content: html,
       author: ['Clover'],
       categories: data.categories?.split(',') ?? [],

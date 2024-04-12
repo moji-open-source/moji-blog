@@ -1,5 +1,9 @@
 interface Post {
   /**
+   * 文章ID
+   */
+  pid: string
+  /**
    * 标题
    */
   title: string
