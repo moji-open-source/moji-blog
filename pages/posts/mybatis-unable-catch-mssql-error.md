@@ -14,7 +14,7 @@ pid: 7384234-2341213
 
 但是在我执行sql语句后无法捕获触发器抛出的异常，执行正常但是响应行数为0（确定有数据）
 
-```log
+```
 ==>  Preparing: update xxx_table SET status=?, actual_qty=? WHERE ticket_no = ? AND prd_id = ?
 ==> Parameters: 1(Integer), 26(Integer), 86896(Integer), 383(Integer)
 <==    Updates: 0
@@ -73,7 +73,7 @@ public class TestHandler implements Interceptor {
 
 在DataGrip中跑这个sql，发现执行出现了错误。触发器抛出了异常，没错啊，可是MyBatis为何捕获不到异常?
 
-```log
+```
 UPDATE xxx_table SET actual_qty=18, status=1 WHERE (ticket_no = 12826 AND prd_id =154)
 [2023-03-17 11:28:27] [S0002][50000] The ticket already completed, can not change the status!
 [2023-03-17 11:28:27] 1 row affected in 69 ms
