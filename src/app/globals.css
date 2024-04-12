@@ -18,7 +18,7 @@
   /* color */
   --background-color1: #1d1f22;
   --background-color2: #2b2d30;
-  --font-color: #BBBBBB;
+  --font-color: #555555;
 }
 
 body {
@@ -49,6 +49,9 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    --font-color: #BBBBBB;
+  }
 
   .shiki {
     --shiki-dark-bg: #282a2d !important;
