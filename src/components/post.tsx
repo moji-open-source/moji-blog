@@ -1,62 +1,53 @@
-import { Image } from '@nextui-org/react'
 import Link from 'next/link'
 import dayjs from 'dayjs'
 import { getPostList } from '#/core/post'
-import { TitleWithDivider } from '#/components/title-with-divider'
 
 export async function PostList() {
-  const categorieHref = 'www.baidu.com'
+  const postsRaw = await getPostList()
 
-  const posts = await getPostList()
+  const posts = Object.groupBy(postsRaw, (item) => {
+    if (!item.date)
+      return ''
+    const year = dayjs(item.date).format('YYYY')
+    return year
+  })
 
-  function parseDate(date?: Date | string) {
-    return dayjs(date).format('YYYY-MM-DD')
-  }
+  const group = Object.entries(posts)
 
-  function parseTime(date?: Date | string) {
-    return dayjs(date).format('HH:MM')
+  function getLocaleString(date: Date | string, lang: string) {
+    return dayjs(date).toDate().toLocaleString(lang, { month: 'long', day: 'numeric' })
   }
 
   return (
     <>
-      <TitleWithDivider title="Rust" number={6}></TitleWithDivider>
-      <div className="grid grid-cols-2 gap-10">
-        {posts.map((it, index) => {
+      <ul>
+        {group.map(([year, posts], index) => {
+          if (!year)
+            return <></>
           return (
-            <div key={index} className="w-full rounded-lg grid grid-cols-1 shadow-lg overflow-hidden bg-white">
-              <Link href={`posts/${it.slug}`}>
-                <Image src="/cover.jpeg" alt="" isZoomed isBlurred className="w-full overflow-hidden rounded-t-lg" radius="none" />
-              </Link>
-              <div className="p-8 box-border">
-                <div className="text-slate-400 text-tiny mb-4">
-                  <ul>
-                    {it.categories.map((categorie, index) => {
-                      return (
-                        <li key={index}>
-                          <Link href={categorieHref}>{categorie}</Link>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </div>
-                <Link href={`posts/${it.slug}`}>
-                  <h1 className="text-base font-medium">
-                    {' '}
-                    {it.title}
-                    {' '}
-                  </h1>
-                </Link>
-                <div className="mb-4 mt-4 w-full h-[1px] border-dotted border-b-2 border-b-slate-300 outline-2 outline-offset-2"></div>
-                <ul className="text-tiny text-slate-400 space-x-2 flex">
-                  <li>{parseDate(it.date)}</li>
-                  <li>•</li>
-                  <li>{parseTime(it.date)}</li>
-                </ul>
+            <>
+              <div className="h-20 relative">
+                <span className="absolute -left-12 top-4 font-bold text-9xl text-transparent text-stroke-hex-aaa opacity-10">{year}</span>
               </div>
-            </div>
+              {posts?.map((post) => {
+                return (
+                  <Link href={`posts/${post.slug}`} key={index}>
+                    <li className="mt-2 mb-6 opacity-60 flex gap-2">
+                      <div className="leading-5 text-lg">
+                        <span>{post.title}</span>
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <span className="whitespace-nowrap text-sm">{getLocaleString(post.date, 'en')}</span>
+                        <span className="whitespace-nowrap text-sm">{post.duration}</span>
+                      </div>
+                    </li>
+                  </Link>
+                )
+              })}
+            </>
           )
         })}
-      </div>
+      </ul>
     </>
   )
 }

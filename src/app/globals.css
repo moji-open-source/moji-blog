@@ -71,3 +71,9 @@ body {
     background-color: hsla(0, 0%, 100%, .1);
   }
 }
+
+.text-stroke-hex-aaa {
+  --un-text-stroke-opacity: 1;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(170 170 170 / 1);
+}

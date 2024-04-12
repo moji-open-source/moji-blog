@@ -4,6 +4,7 @@ date: 2023-04-12
 lang: zh-CN
 tags: rust
 categories: NOTES
+duration: 10min
 ---
 
 # 数据类型

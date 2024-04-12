@@ -2,6 +2,8 @@ import { PostList } from '#/components/post'
 
 export default function Home() {
   return (
-    <PostList />
+    <div className="container mx-auto">
+      <PostList />
+    </div>
   )
 }

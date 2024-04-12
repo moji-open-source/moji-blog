@@ -31,6 +31,13 @@ interface Post {
    * 封面
    */
   cover?: string
+  /**
+   * 作者
+   */
   author: string[]
+  /**
+   * 阅读时长
+   */
+  duration?: string
   [key: string]: any
 }
