@@ -45,6 +45,7 @@ export function Header() {
               <GitHubIcon className="w-[18px] text-center" fill="var(--font-color)" />
             </Link>
           </NavbarItem>
+
           <NavbarItem>
             <div color="foreground" className="cursor-pointer" onClick={test}>
               <span className="icon-[ph--sun] dark:icon-[ph--moon] !w-5 !h-5 align-text-bottom"></span>
@@ -75,8 +76,12 @@ export function Header() {
 
         <NavbarContent className="sm:hidden" justify="end">
           <NavbarMenuToggle aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} />
+
         </NavbarContent>
 
+        <div color="foreground" className="cursor-pointer sm:hidden" onClick={test}>
+          <span className="icon-[ph--sun] dark:icon-[ph--moon] !w-5 !h-5 align-text-bottom"></span>
+        </div>
       </Navbar>
       <GoTopBtn />
     </>
