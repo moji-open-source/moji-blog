@@ -1,11 +1,15 @@
 import styles from './post-view.module.css'
 
-export function PostView(props: { html: string }) {
+interface PostViewProps extends React.PropsWithChildren {
+  html: string
+}
+export function PostView(props: PostViewProps) {
   return (
     <div
       className={styles.MarkdownBody}
-      dangerouslySetInnerHTML={{ __html: props.html }}
     >
+      <div dangerouslySetInnerHTML={{ __html: props.html }} />
+      {props.children}
     </div>
   )
 }

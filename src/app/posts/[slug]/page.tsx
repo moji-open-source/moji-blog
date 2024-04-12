@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import dayjs from 'dayjs'
 import { getPostBySlug, getSlugs } from '#/core/post'
 import { PostView } from '#/components/post-view'
+import { Goback } from '#/components/goback'
 
 interface Props {
   params: {
@@ -59,7 +60,9 @@ export default async function PostPage(props: Props) {
             </span>
           </p>
         </div>
-        <PostView html={post.content} />
+        <PostView html={post.content}>
+          <Goback href="/" />
+        </PostView>
       </div>
     </>
   )
