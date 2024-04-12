@@ -3,12 +3,18 @@ import { Image, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, Navb
 import Link from 'next/link'
 
 import React from 'react'
+import { useTheme } from 'next-themes'
 import LogoImg from '#/assets/logo@185×185.webp'
 import { GitHubIcon } from '#/components/icons/github-icon'
 import { GoTopBtn } from '#/components/gotop'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const theme = useTheme()
+
+  function test() {
+    theme.setTheme(theme.theme === 'dark' ? 'light' : 'dark')
+  }
 
   return (
     <>
@@ -37,6 +43,11 @@ export function Header() {
           <NavbarItem>
             <Link color="foreground" href="https://github.com/Clover-You" target="_blank">
               <GitHubIcon className="w-[18px] text-center" fill="var(--font-color)" />
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link color="foreground" href="#" onClick={test}>
+              <span className="icon-[ph--sun] dark:icon-[ph--moon] !w-5 !h-5 align-text-bottom"></span>
             </Link>
           </NavbarItem>
         </NavbarContent>

@@ -18,7 +18,7 @@ const config: Config = {
       },
     },
   },
-  darkMode: 'media',
+  darkMode: 'class',
   plugins: [nextui(), addDynamicIconSelectors(), plugin(({ matchUtilities, theme }) => {
     matchUtilities(
       {

@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" data-theme="light" style={{ colorScheme: 'light' }}>
+    <html lang="en" className="light" data-theme="light" style={{ colorScheme: 'light' }}>
       <body>
         <SpeedInsights />
         <Provider>

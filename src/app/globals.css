@@ -20,7 +20,11 @@
   --background-color2: #2b2d30;
   --font-color: #555555;
   --fg-deeper: #000;
-
+  --color-border-default: #e6eaed;
+  --color-bg-code: #f8f8f8;
+  --fgColor-accent: #0969da;
+  --fg-deeper: #000;
+  --fg-deep: #222;
 
   --enter-stage: 0;
   --enter-step: 90ms;
@@ -54,29 +58,29 @@ body {
   border-radius: 9999px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --font-color: #BBBBBB;
-    --fg-deeper: #fff;
-  }
+.dark {
+  --font-color: #BBBBBB;
+  --fg-deeper: #fff;
+  --fg-deep: #ddd;
+  --color-border-default: hsl(var(--nextui-default-200));
+}
 
-  .shiki {
-    --shiki-dark-bg: #282a2d !important;
-  }
+.dark .shiki {
+  --shiki-dark-bg: #121213 !important;
+}
 
-  .shiki,
-  .shiki span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    /* 可选，用于定义字体样式 */
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
-  }
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  /* 可选，用于定义字体样式 */
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background-color: hsla(0, 0%, 100%, .1);
-  }
+.dark::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 0%, 100%, .1);
 }
 
 .text-stroke-hex-aaa {
@@ -98,19 +102,10 @@ body {
   line-height: 1.25;
 }
 
-@keyframes slide-enter {
-  0% {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
+
+  html:not(.no-sliding) [slide-enter],
+  html:not(.no-sliding) .slide-enter,
   html:not(.no-sliding) .slide-enter-content>*:not(:has(.table-of-contents)) {
     --enter-stage: 0;
     --enter-step: 90ms;
@@ -124,5 +119,17 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   .slide-enter-content>*:nth-child(2) {
     --enter-stage: 2 !important;
+  }
+}
+
+@keyframes slide-enter {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

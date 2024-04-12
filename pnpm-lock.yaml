@@ -61,6 +61,9 @@ devDependencies:
   '@iconify-json/humbleicons':
     specifier: ^1.1.10
     version: 1.1.10
+  '@iconify-json/ph':
+    specifier: ^1.1.12
+    version: 1.1.12
   '@iconify/tailwind':
     specifier: ^0.1.4
     version: 0.1.4
@@ -598,6 +601,12 @@ packages:
 
   /@iconify-json/humbleicons@1.1.10:
     resolution: {integrity: sha512-oOOjBoTlFStUzglkpMTeFVo1pxfz02pOkRBYMAZG3R2dAhZjo8d+R3FbEDBfvraRNRmQxSakTVDgPyyCoSNHhQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/ph@1.1.12:
+    resolution: {integrity: sha512-m+rXTW084YaQQHT+F8TxdkCoAh+i/5MWRoSuPmxCWPlxwMAaLT/QfyVsbEiV95HM5806U/jKpBV6F1b7Pmr3Vg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

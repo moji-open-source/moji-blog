@@ -6,7 +6,7 @@ import { NextUIProvider } from './NextUIProvider'
 export function Provider(props: PropsWithChildren) {
   return (
     <>
-      <ThemeProvider>
+      <ThemeProvider enableSystem enableColorScheme attribute="class">
         <NextUIProvider>{props.children}</NextUIProvider>
       </ThemeProvider>
     </>
