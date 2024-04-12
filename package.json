@@ -15,6 +15,9 @@
   "keywords": [
     "blog"
   ],
+  "engines": {
+    "node": "21.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
