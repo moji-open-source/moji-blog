@@ -16,7 +16,7 @@
     "blog"
   ],
   "engines": {
-    "node": "21.x"
+    "node": "21.7.3"
   },
   "scripts": {
     "dev": "next dev",
