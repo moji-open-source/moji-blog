@@ -5,11 +5,17 @@ import { getPostList } from '#/core/post'
 export async function PostList() {
   const postsRaw = await getPostList()
 
-  const posts = Object.groupBy(postsRaw, (item) => {
-    if (!item.date)
-      return ''
-    const year = dayjs(item.date).format('YYYY')
-    return year
+  const posts: Record<string, Post[]> = {}
+
+  postsRaw.forEach((item) => {
+    if (item.date) {
+      const year = dayjs(item.date).format('YYYY')
+      const list = posts[year] ?? []
+
+      list.push(item)
+
+      posts[year] = list
+    }
   })
 
   const group = Object.entries(posts)
