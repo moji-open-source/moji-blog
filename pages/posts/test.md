@@ -7,11 +7,11 @@ categories: NOTES
 duration: 10min
 pid: 78324
 ---
-
+<!--
 <figure>
   <img src="https://antfu.me/images/oss-mental-iron-triangle-zh.svg" />
   <figcaption class="text-center">速度-规模-品质 铁三角</figcaption>
-</figure>
+</figure> -->
 
 > 创建于 2023-04-12 16:59
 >
