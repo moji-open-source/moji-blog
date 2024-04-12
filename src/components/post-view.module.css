@@ -211,4 +211,20 @@
   margin: 2.6em 0;
 }
 
+.MarkdownBody img {
+  width: 100%;
+}
+
+.MarkdownBody figure>* {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.MarkdownBody figure figcaption {
+  color: #6b7280;
+  font-size: .875em;
+  line-height: 1.4285714;
+  margin-top: .8571429em;
+}
+
 /********************** img end ***********************/
