@@ -15,6 +15,7 @@ const markdown = MarkdownIt({
 useShiki(markdown)
 
 const IsPro = process.env.NODE_ENV === 'production'
+const IsDev = process.env.NODE_ENV === 'development'
 
 async function getMarkdownFiles(path: string) {
   const files = await fg(path)
@@ -29,7 +30,7 @@ async function getMarkdownFiles(path: string) {
 let __POSTS: Post[]
 
 export async function getPostList() {
-  if (__POSTS)
+  if (!IsDev && __POSTS)
     return __POSTS
 
   const files = await getMarkdownFiles('pages/posts/*.md')
@@ -68,7 +69,7 @@ export async function getPostList() {
 
 let __POSTS_MAP: Record<string, Post>
 export async function getPostRouteMap() {
-  if (__POSTS_MAP)
+  if (!IsDev && __POSTS_MAP)
     return __POSTS_MAP
 
   const posts = await getPostList()
@@ -97,7 +98,7 @@ export async function getSlugs() {
 
 let __CATEGORIES: string[]
 export async function getAllCategories() {
-  if (__CATEGORIES)
+  if (!IsDev && __CATEGORIES)
     return __CATEGORIES
 
   const posts = await getPostList()
@@ -134,7 +135,7 @@ async function getPages() {
 
 let __PAGE_MAP: Record<string, { content: string, meta: any, page: string }>
 export async function getPageMap() {
-  if (__PAGE_MAP)
+  if (!IsDev && __PAGE_MAP)
     return __PAGE_MAP
 
   const pages = await getPages()
