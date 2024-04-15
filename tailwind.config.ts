@@ -6,6 +6,7 @@ import { addDynamicIconSelectors } from '@iconify/tailwind'
 const config: Config = {
   content: [
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.md',
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',

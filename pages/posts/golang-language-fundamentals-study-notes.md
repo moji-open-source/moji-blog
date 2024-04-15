@@ -317,7 +317,9 @@ var boolean bool = false
   ```go
   var hello = "hello" + " world"
   hello += "!"
+
  fmt.Println(hello)
+
   ```
 
   有一点需要注意的是，当拼接多行字符串需要换行时，符号 `+` 不允许换行，而是保留在当前行。
@@ -419,10 +421,11 @@ var age int64 = strconv.ParseInt("20", 10, 64)
    var num = 100
    ```
 
-   ![基本数据类型内存图](https://qiniu-note-image.ctong.top/note/images/202305042133169.png)
+   <!-- ![基本数据类型内存图](/images/golang-language-fundamentals-study-notes-basic-data-type-memory-diagram.png) -->
+   <img src="/images/golang-language-fundamentals-study-notes-basic-data-type-memory-diagram.png" class="filter dark:invert !w-[200px] mx-auto" />
 
 2. 引用类型：变量存储的是一个地址，这个地址对应的空间才是真正存储对应的值，内存**通常**在堆上分配。当没有任何变量引用这个地址时，该地址对应的空间就会成为一个垃圾，等待GC进行回收。
-   ![引用类型内存图](https://qiniu-note-image.ctong.top/note/images/202305042136025.png)
+   <img src="/images/golang-language-fundamentals-study-notes-ref-data-type-memory-diagram.png" class="filter dark:invert" />
 
 ## 指针
 
