@@ -422,7 +422,7 @@ var age int64 = strconv.ParseInt("20", 10, 64)
    ```
 
    <!-- ![基本数据类型内存图](/images/golang-language-fundamentals-study-notes-basic-data-type-memory-diagram.png) -->
-   <img src="/images/golang-language-fundamentals-study-notes-basic-data-type-memory-diagram.png" class="filter dark:invert !w-[200px] mx-auto" />
+   <img src="/images/golang-language-fundamentals-study-notes-basic-data-type-memory-diagram.png" class="filter dark:invert" />
 
 2. 引用类型：变量存储的是一个地址，这个地址对应的空间才是真正存储对应的值，内存**通常**在堆上分配。当没有任何变量引用这个地址时，该地址对应的空间就会成为一个垃圾，等待GC进行回收。
    <img src="/images/golang-language-fundamentals-study-notes-ref-data-type-memory-diagram.png" class="filter dark:invert" />
