@@ -1,0 +1,65 @@
+'use client'
+import { useEvent } from 'react-use'
+import { Image, Modal, ModalBody, ModalContent } from '@nextui-org/react'
+import React from 'react'
+import styles from './post-view.module.css'
+
+interface PostViewProps extends React.PropsWithChildren {
+  html: string
+}
+export function PostView(props: PostViewProps) {
+  return (
+    <div
+      className={`${styles.MarkdownBody} slide-enter-content`}
+    >
+      <ImagePreview />
+      <div dangerouslySetInnerHTML={{ __html: props.html }} />
+      {props.children}
+    </div>
+  )
+}
+
+function ImagePreview() {
+  const [imagePreviewState, setImagePreviewState] = React.useState(false)
+  const imageModel = React.useRef<HTMLImageElement>()
+
+  useEvent('click', (e) => {
+    const path = Array.from(e.composedPath())
+    const first = path[0]
+
+    if (!(first instanceof HTMLElement))
+      return
+    if (first.tagName !== 'IMG')
+      return
+    if (first.classList.contains('no-preview'))
+      return
+
+    imageModel.current = first as HTMLImageElement
+    setImagePreviewState(true)
+  })
+
+  return (
+    <Modal
+      isOpen={imagePreviewState}
+      onOpenChange={setImagePreviewState}
+      backdrop="blur"
+      size="full"
+      placement="center"
+      classNames={{
+        base: 'bg-transparent',
+      }}
+    >
+      <ModalContent className="mx-auto">
+        <ModalBody className="overflow-auto flex items-center justify-center">
+          <Image
+            src={imageModel.current?.src ?? ''}
+            alt={imageModel.current?.alt ?? ''}
+            removeWrapper
+            className="max-w-full max-h-full z-10 bg-cover"
+
+          />
+        </ModalBody>
+      </ModalContent>
+    </Modal>
+  )
+}

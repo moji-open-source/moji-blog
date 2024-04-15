@@ -1,4 +1,17 @@
-# 数据类型
+---
+title: Rust 数据类型
+date: 2023-04-12
+lang: zh-CN
+tags: rust
+categories: NOTES
+duration: 10min
+pid: 78324
+---
+<!--
+<figure>
+  <img src="https://antfu.me/images/oss-mental-iron-triangle-zh.svg" />
+  <figcaption class="text-center">速度-规模-品质 铁三角</figcaption>
+</figure> -->
 
 > 创建于 2023-04-12 16:59
 >
@@ -31,7 +44,6 @@ help: consider giving `num` an explicit type
 
 For more information about this error, try `rustc --explain E0282`.
 error: could not compile `datatype` due to previous error
-
 
 ```
 

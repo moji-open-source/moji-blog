@@ -1,48 +1,62 @@
-import { TitleWithDivider } from "#/components/title-with-divider"
-import { Image } from "@nextui-org/react"
-import Link from "next/link"
+import Link from 'next/link'
+import dayjs from 'dayjs'
+import { getPostList } from '#/core/post'
 
-export function PostList() {
+export async function PostList() {
+  const postsRaw = await getPostList()
 
-  const categorieHref = "www.baidu.com"
-  const articleHref = "/article/java-base"
+  const posts: Record<string, Post[]> = {}
 
-  const Node = <>
-    <div className="w-full rounded-lg grid grid-cols-1 shadow-lg overflow-hidden bg-white">
-      <Link href={articleHref}>
-        <Image src="/cover.jpeg" alt="" isZoomed isBlurred className="w-full overflow-hidden rounded-t-lg" radius="none" />
-      </Link>
-      <div className="p-8 box-border">
-        <div className="text-slate-400 text-tiny mb-4">
-          <ul>
-            <li>
-              <Link href={categorieHref}>RUST</Link>
-            </li>
-          </ul>
-        </div>
-        <Link href={articleHref}>
-          <h1 className="text-base font-medium"> Rust 从入门到精通 </h1>
-        </Link>
-        <div className="mb-4 mt-4 w-full h-[1px] border-dotted border-b-2 border-b-slate-300 outline-2 outline-offset-2"></div>
-        <ul className="text-tiny text-slate-400 space-x-2 flex">
-          <li>2024-03-08</li>
-          <li>•</li>
-          <li>20:58</li>
-        </ul>
-      </div>
-    </div>
-  </>
+  postsRaw.forEach((item) => {
+    if (item.date) {
+      const year = dayjs(item.date).format('YYYY')
+      const list = posts[year] ?? []
 
-  return <>
-    <TitleWithDivider title="Rust" number={6}></TitleWithDivider>
-    <div className="grid grid-cols-2 gap-10">
-      {Node}
-      {Node}
-      {Node}
-      {Node}
-      {Node}
-      {Node}
-      {Node}
-    </div>
-  </>
+      list.push(item)
+
+      posts[year] = list
+    }
+  })
+
+  const group = Object.entries(posts)
+
+  group.sort(([a], [b]) => Number(b ?? 0) - Number(a ?? 0))
+
+  function getLocaleString(date: Date | string, lang: string) {
+    return dayjs(date).toDate().toLocaleString(lang, { month: 'long', day: 'numeric' })
+  }
+
+  return (
+    <>
+      <ul>
+        {group.map(([year, posts]) => {
+          if (!year)
+            return <></>
+
+          return (
+            <>
+              <div className="h-20 relative -z-10">
+                <span className="absolute -left-12 top-4 font-bold text-9xl text-transparent text-stroke-hex-aaa opacity-10">{year}</span>
+              </div>
+              {posts?.map((post) => {
+                return (
+                  <Link href={`posts/${post.slug}`} key={post.pid} className=" opacity-60  hover:opacity-100">
+                    <li className="mt-2 mb-6 flex gap-2">
+                      <div className="leading-5 text-lg">
+                        <span>{post.title}</span>
+                      </div>
+                      <div className="flex gap-2 items-center">
+                        <span className="whitespace-nowrap text-sm">{getLocaleString(post.date, 'en')}</span>
+                        <span className="whitespace-nowrap text-sm">{post.duration}</span>
+                      </div>
+                    </li>
+                  </Link>
+                )
+              })}
+            </>
+          )
+        })}
+      </ul>
+    </>
+  )
 }

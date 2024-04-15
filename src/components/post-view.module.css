@@ -1,0 +1,222 @@
+.MarkdownBody {
+  font-size: 16px;
+  word-wrap: break-word;
+  border-radius: 10px;
+
+
+  /* --shiki-dark: #3b3b3b;
+  --shiki-dark-bg: #000; */
+
+}
+
+.MarkdownBody strong {
+  font-weight: 600;
+  color: var(--fg-deep);
+}
+
+.MarkdownBody ol {
+  list-style-type: decimal;
+  counter-reset: sectioncounter;
+  padding-left: 2em;
+}
+
+.MarkdownBody h1 {
+  color: var(--fg-deeper);
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: .8888889em;
+  line-height: 1.1111111;
+}
+
+.MarkdownBody h2 {
+  color: var(--fg-deeper);
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+}
+
+.MarkdownBody h3 {
+  color: inherit;
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-bottom: .6em;
+  line-height: 1.6;
+}
+
+.MarkdownBody h4 {
+  color: inherit;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+  line-height: 1.5;
+}
+
+.MarkdownBody h6 {
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.MarkdownBody blockquote {
+  color: inherit;
+  border-left-width: .25rem;
+  border-color: #7d7d7d4d;
+  quotes: "“" "”" "‘" "’";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  font-style: normal;
+  line-height: 1.6em;
+  padding: .5em 1em;
+  margin-left: -1.1em;
+}
+
+.MarkdownBody blockquote>* {
+  opacity: 0.7;
+}
+
+.MarkdownBody p,
+.MarkdownBody blockquote,
+.MarkdownBody ul,
+.MarkdownBody ol,
+.MarkdownBody dl,
+.MarkdownBody table,
+.MarkdownBody pre,
+.MarkdownBody details {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.MarkdownBody a {
+  font-weight: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(125, 125, 125, .3);
+  transition: border .3s ease-in-out;
+  color: var(--fg-deeper);
+}
+
+/********************** table begin ***********************/
+.MarkdownBody table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: .875em;
+  line-height: 1.7142857;
+}
+
+.MarkdownBody table tr:nth-child(2n) {
+  background-color: var(--bgColor-muted);
+}
+
+.MarkdownBody table tr {
+  background-color: var(--bgColor-default);
+  border-top: 1px solid var(--borderColor-muted);
+}
+
+.MarkdownBody thead {
+  color: var(--fg-deeper);
+  font-weight: 600;
+  border-bottom-width: 1px;
+  border-bottom-color: #8882;
+}
+
+.MarkdownBody thead th {
+  vertical-align: bottom;
+  padding-right: .5714286em;
+  padding-bottom: .5714286em;
+  padding-left: .5714286em;
+}
+
+.MarkdownBody tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: #8882;
+}
+
+.MarkdownBody tbody td {
+  vertical-align: top;
+  padding: .5714286em;
+}
+
+/********************** table begin ***********************/
+
+/********************** code end ***********************/
+.MarkdownBody code,
+.MarkdownBody tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  font-family: "Courier", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.MarkdownBody pre[data-language] code {
+  background-color: transparent !important;
+  padding: 10px;
+  border: none;
+  word-wrap: normal;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  overflow: auto;
+  display: block;
+}
+
+.MarkdownBody pre[data-language] {
+  border-radius: 5px;
+}
+
+.MarkdownBody pre[data-language] {
+  position: relative;
+}
+
+.MarkdownBody pre[data-language]::after {
+  opacity: 0.2;
+  content: attr(data-language);
+  font-size: 1.625rem;
+  font-weight: 700;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.2rem;
+  user-select: none;
+  pointer-events: none;
+  color: #64778b;
+  font-family: ui-monospace, JetBrains Mono, SFMono-Regular, Menlo, Monaco,
+    Consolas, Andale Mono, Liberation Mono, Ubuntu Mono, Courier New, monospace;
+}
+
+/********************** code end ***********************/
+/********************** img begin ***********************/
+.MarkdownBody p>img {
+  width: 100%;
+  border-radius: .5rem;
+  transform: scale(1.05);
+  margin: 2.6em 0;
+}
+
+.MarkdownBody img {
+  width: 100%;
+}
+
+.MarkdownBody figure>* {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.MarkdownBody figure figcaption {
+  color: #6b7280;
+  font-size: .875em;
+  line-height: 1.4285714;
+  margin-top: .8571429em;
+}
+
+/********************** img end ***********************/
