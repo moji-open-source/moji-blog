@@ -34,9 +34,13 @@ export async function PostList() {
             return <></>
 
           return (
-            <>
+            <div aria-label={year} key={year}>
               <div className="h-20 relative -z-10">
-                <span className="absolute -left-12 top-4 font-bold text-9xl text-transparent text-stroke-hex-aaa opacity-10">{year}</span>
+                <span className="absolute -left-12 top-4 font-bold text-9xl text-transparent
+                text-stroke-hex-aaa opacity-10"
+                >
+                  {year}
+                </span>
               </div>
               {posts?.map((post) => {
                 return (
@@ -53,7 +57,7 @@ export async function PostList() {
                   </Link>
                 )
               })}
-            </>
+            </div>
           )
         })}
       </ul>
