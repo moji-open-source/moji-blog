@@ -1,3 +1,4 @@
+import process from 'node:process'
 import fg from 'fast-glob'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
@@ -13,13 +14,25 @@ const markdown = MarkdownIt({
 
 useShiki(markdown)
 
+const IsPro = process.env.NODE_ENV === 'production'
+
+async function getMarkdownFiles(path: string) {
+  const files = await fg(path)
+
+  return files.filter((it) => {
+    if (!IsPro)
+      return true
+    return !it.endsWith('.dev.md')
+  })
+}
+
 let __POSTS: Post[]
 
 export async function getPostList() {
   if (__POSTS)
     return __POSTS
 
-  const files = await fg('pages/posts/*.md')
+  const files = await getMarkdownFiles('pages/posts/*.md')
 
   let posts = await Promise.all(files.map<Promise<Post>>(async (file) => {
     const raw = await fs.readFile(file, 'utf-8')
@@ -100,7 +113,7 @@ export async function getCateforieTotal() {
 }
 
 async function getPages() {
-  const files = await fg('pages/*.md')
+  const files = await getMarkdownFiles('pages/*.md')
 
   return await Promise.all(files.map(async (file) => {
     const raw = await fs.readFile(file, 'utf-8')
