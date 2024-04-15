@@ -4,18 +4,28 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Flowchart drawing: <https://www.iodraw.com/whiteboard/>
 
+## Post Properties
+
+| properties | type                | description                                                                                                                     | default | require | example                                         |
+| ---------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- | ----------------------------------------------- |
+| title      | string              | display as post title instead of using 'h1'                                                                                     |         | √       | title: Golang language fundamentals study notes |
+| tags       | string\[\]          | post tags                                                                                                                       | `[]`    | ×       | tags:<br>  - learn<br>  - golang                |
+| lang       | string              | post read language. It can be auto switched lang to the system language.                                                        |         | ×       | lang: en                                        |
+| date       | yyyy-MM-dd HH:mm:ss | post first publish datetime                                                                                                     |         | √       | date: 2024-04-15 10:34:30                       |
+| categories | string\[\]          | post category                                                                                                                   |         | ×       | categories:<br>  - notes                        |
+| pid        | string              | post id, each post should have a unique id                                                                                      |         | √       | pid: 6f604b36-5d8f-4227-ac85-db43927cf53b       |
+| last-edit  | yyyy-MM-dd HH:mm:ss | the date of the last edit of the post, if not, used date property value. If it is more than 3 months, the post may be outdated. | `#date` | ×       | last-edit: 2024-09-15 14:23:49                  |
+| duration   | string              | estimated reading time                                                                                                          | -       | ×       | duration: 15min                                 |
+| autor      | string              | post autor                                                                                                                      |         | x       | autor: Clover                                   |
+
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+
 pnpm dev
-# or
-bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
