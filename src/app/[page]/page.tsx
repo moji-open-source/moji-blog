@@ -21,6 +21,10 @@ export default async function Page(props: Props) {
 
   return (
     <div className="mx-auto px-6 container">
+      <div className="prose mb-8">
+        <h1>{page.meta.title}</h1>
+      </div>
+
       <PostView html={page.content} />
     </div>
   )
