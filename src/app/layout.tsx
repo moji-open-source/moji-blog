@@ -1,17 +1,28 @@
 import type { Metadata } from 'next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import fg from 'fast-glob'
+import fs from 'fs-extra'
+import toml from 'toml'
+
 import './globals.css'
 
 import { Provider } from '#/lib/providers'
 import { Header } from '#/components/header'
 import { Copyright } from '#/components/copyright'
 
-export const metadata: Metadata = {
-  title: 'Clover\'s Blog',
-  description: 'Hey, I am Clover You, welcome here!',
+export async function generateMetadata(): Promise<Metadata> {
+  const [configPath] = await fg('_config.toml')
+  const configContent = await fs.readFile(configPath, 'utf-8')
+  const { website } = toml.parse(configContent) as Config
+
+  return {
+    title: website.title ?? 'Moji\'s Blog',
+    description: website.description,
+    keywords: website.keywords ?? ['blog', 'moji'],
+  }
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode

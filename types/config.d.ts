@@ -1,6 +1,9 @@
 interface Config {
   website: WebsiteConfig
   theme: ThemeConfig
+  navbar: {
+    items?: NavbarItem[]
+  }
 }
 
 interface WebsiteConfig {
@@ -19,4 +22,14 @@ type ThemeMode = 'dark' | 'light'
 
 interface ThemeConfig {
   mode: ThemeMode
+}
+
+interface NavbarItem {
+  url: string
+  target?: React.HTMLAttributeAnchorTarget
+  iconClass?: string
+  textColor?: string
+  iconColor?: string
+  iconSize?: string
+  label?: string
 }
