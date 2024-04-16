@@ -43,7 +43,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use": "^17.5.0",
-    "shiki": "^1.1.7"
+    "shiki": "^1.1.7",
+    "toml": "^3.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.11.0",
