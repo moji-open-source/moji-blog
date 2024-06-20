@@ -42,6 +42,10 @@ body {
   /* background-color: var(--background-color1); */
 }
 
+::selection {
+  background: #8884;
+}
+
 ::-webkit-scrollbar {
   height: 1rem;
   width: 1rem;
@@ -74,10 +78,6 @@ body {
   font-weight: var(--shiki-dark-font-weight) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
 }
-
-/* .dark::-webkit-scrollbar-thumb {
-  background-color: --scrollbar-thumb-bg;
-} */
 
 .text-stroke-hex-aaa {
   --un-text-stroke-opacity: 1;
