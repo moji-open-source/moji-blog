@@ -8,16 +8,16 @@ interface PostViewProps extends React.PropsWithChildren {
   content?: React.ReactNode
 }
 
-export function PostView(props: PostViewProps) {
+export function PostView({ children, content }: PostViewProps) {
   return (
     <div
       className={`${styles.MarkdownBody} slide-enter-content`}
     >
       <ImagePreview />
       <div>
-        {props.content}
+        {content}
       </div>
-      {props.children}
+      {children}
     </div>
   )
 }
