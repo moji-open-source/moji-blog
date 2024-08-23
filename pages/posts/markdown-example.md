@@ -78,6 +78,42 @@ let message = 'Hello world';
 alert(message);
 ```
 
+render code by <a class="markdown-magic-link" href="https://shiki.style" target="_blank" rel="noopener">
+  <img class="markdown-magic-link-image" src="https://avatars.githubusercontent.com/u/69196822?v=4" />
+  @Shiki
+</a>
+
+```rust
+use std::str::FromStr;
+
+use proto_demo::user::{self, SigninRequest};
+use tokio::runtime::Builder;
+use tonic::{metadata::MetadataValue, Request};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+  let mut cli = user::user_client::UseClient::connect("http://[::1]:8081")
+  .await?;
+
+  let mut req = Request::new(SigninRequest {
+      email: "cloveryou02@gmail.com".to_string(),
+      password: "123456".to_string(),
+  });
+
+  let metadata = req.metadata_mut();
+
+  let token = MetadataValue::from_str("authentication token")?;
+  metadata.append("authentication", token);
+
+  let res = cli.signin(req).await?;
+  let res = res.get_ref();
+
+  println!("gRPC response result: {:?}", res);
+
+  Ok(())
+}
+```
+
 ## Inline code
 
 This web site is using `markedjs/marked`.
