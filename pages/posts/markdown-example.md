@@ -8,7 +8,15 @@ pid: 39339a477aea1d494959790e4c7262679b64
 last-edit: 2024-04-15 14:23:49
 duration: 10min
 author: Clover You
+imports: |
+  import { ToggleTheme } from '#/components/ToggleTheme'
 ---
+
+As you can see, this is an interoperable butto! Try click it!
+
+<div>
+  <ToggleTheme />
+</div>
 
 # Markdown syntax guide
 
