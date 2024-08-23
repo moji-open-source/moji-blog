@@ -1,25 +1,26 @@
 import Link from 'next/link'
 import dayjs from 'dayjs'
-import { getPostList } from '#/core/post'
 import { appendStrPrefix } from '#/article'
 
-export async function PostList() {
-  const postsRaw = await getPostList()
+interface PostListProps {
+  posts: Post[]
+}
 
-  const posts: Record<string, Post[]> = {}
+export function PostList({ posts }: PostListProps) {
+  const postGroupByTime: Record<string, Post[]> = {}
 
-  postsRaw.forEach((item) => {
+  posts.forEach((item) => {
     if (item.date) {
       const year = dayjs(item.date).format('YYYY')
-      const list = posts[year] ?? []
+      const list = postGroupByTime[year] ?? []
 
       list.push(item)
 
-      posts[year] = list
+      postGroupByTime[year] = list
     }
   })
 
-  const group = Object.entries(posts)
+  const group = Object.entries(postGroupByTime)
 
   group.sort(([a], [b]) => Number(b ?? 0) - Number(a ?? 0))
 
@@ -32,7 +33,7 @@ export async function PostList() {
       <ul>
         {group.map(([year, posts]) => {
           if (!year)
-            return <></>
+            return undefined
 
           return (
             <div aria-label={year} key={year}>
