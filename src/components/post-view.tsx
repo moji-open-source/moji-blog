@@ -14,9 +14,7 @@ export function PostView({ children, content }: PostViewProps) {
       className={`${styles.MarkdownBody} slide-enter-content`}
     >
       <ImagePreview />
-      <div>
-        {content}
-      </div>
+      {content}
       {children}
     </div>
   )

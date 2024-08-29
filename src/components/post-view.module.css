@@ -67,6 +67,9 @@
   font-style: normal;
   line-height: 1.6em;
   padding: .5em 1em;
+}
+
+.MarkdownBody > blockquote {
   margin-left: -1.1em;
 }
 
