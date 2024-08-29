@@ -12,6 +12,8 @@ imports: |
   import { ToggleTheme } from '#/components/ToggleTheme'
 ---
 
+This is an external link <a href="http://www.ctong.top" target="_blank">Click</a> on it to go to the destination
+
 As you can see, this is an interoperable butto! Try click it!
 
 <div>
