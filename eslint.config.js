@@ -9,6 +9,7 @@ export default antfu(
       'semi': ['error', 'never'],
       'prefer-const': 'error',
       'react-refresh/only-export-components': 'off',
+      'node/prefer-global/process': 'off',
     },
   },
 )

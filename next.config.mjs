@@ -10,8 +10,6 @@ function parseMetaString(_metaString, _code, lang) {
   }
 }
 
-const availableRules = ["inline", 'heading_close']
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
