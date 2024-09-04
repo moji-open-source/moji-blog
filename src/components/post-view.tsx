@@ -1,7 +1,7 @@
 'use client'
 import { useEvent } from 'react-use'
 import { Image, Modal, ModalBody, ModalContent } from '@nextui-org/react'
-import React, { useEffect, useRef } from 'react'
+import React, { memo, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import styles from './post-view.module.css'
 import { useEventListener } from '#/use/eventListener'
@@ -11,7 +11,7 @@ interface PostViewProps extends React.PropsWithChildren {
   frontmatter?: Post
 }
 
-export function PostView({ children, content }: PostViewProps) {
+export function PostView({ children, content, frontmatter }: PostViewProps) {
   const router = useRouter()
   const contentRef = useRef<HTMLElement>(null)
 
@@ -78,11 +78,23 @@ export function PostView({ children, content }: PostViewProps) {
     }, 1)
   }, [])
 
+  const DraftTips = memo(({ draft }: { draft?: boolean }) => {
+    if (!draft)
+      return undefined
+
+    return (
+      <p className="slide-enter bg-orange-400/10 text-orange-400 border-l-3 border-orange-400 px-4 py-2">
+        This is a draft post, the content may be incomplete. Please check back later.
+      </p>
+    )
+  })
+
   return (
     <div
       className={`${styles.article} slide-enter-content`}
     >
       <ImagePreview />
+      <DraftTips draft={frontmatter?.draft} />
       <article ref={contentRef}>
         {content}
       </article>
