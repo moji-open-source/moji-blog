@@ -12,6 +12,7 @@ imports: |
   import { ToggleTheme } from '#/components/ToggleTheme'
   import { GitHubTooltipAnchor } from '#/components/GitHubTooltip'
 ---
+[[toc]]
 
 This is a magic anchor, the cursor hovers over it to open the card <GitHubTooltipAnchor user="Clover-You" href="http://www.ctong.top">@Clover You</GitHubTooltipAnchor> | <GitHubTooltipAnchor user="antfu" href="https://github.com/antfu">@Anthony Fu</GitHubTooltipAnchor>
 
@@ -130,3 +131,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 ## Inline code
 
 This web site is using `markedjs/marked`.
+
+::: warning
+*here be dragons*
+:::
