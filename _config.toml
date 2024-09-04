@@ -30,5 +30,5 @@ mode = "dark"
 items = [
   { url = "/about", label = "About" },
   { url = "/", label = "Blog" },
-  { url = "https://github.com/Clover-You", iconClass = "icon-[mdi--github]", target = "_blank" },
+  { url = "https://github.com/Clover-You", iconClass = "icon-[mdi--github]", target = "_blank", title = "GitHub" },
 ]
