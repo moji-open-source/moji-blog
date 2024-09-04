@@ -13,7 +13,7 @@ imports: |
   import { GitHubTooltipAnchor } from '#/components/GitHubTooltip'
 ---
 
-This is a magic anchor, the cursor hovers over it to open the card <GitHubTooltipAnchor user="Clover-You">@Clover You</GitHubTooltipAnchor> | <GitHubTooltipAnchor user="antfu">@Anthony Fu</GitHubTooltipAnchor>
+This is a magic anchor, the cursor hovers over it to open the card <GitHubTooltipAnchor user="Clover-You" href="http://www.ctong.top">@Clover You</GitHubTooltipAnchor> | <GitHubTooltipAnchor user="antfu" href="https://github.com/antfu">@Anthony Fu</GitHubTooltipAnchor>
 
 This is an external link <a href="http://www.ctong.top" target="_blank">Click</a> on it to go to the destination
 
