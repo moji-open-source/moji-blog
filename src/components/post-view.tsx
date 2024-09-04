@@ -1,15 +1,20 @@
 'use client'
 import { useEvent } from 'react-use'
 import { Image, Modal, ModalBody, ModalContent } from '@nextui-org/react'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import styles from './post-view.module.css'
 import { useEventListener } from '#/use/eventListener'
 
 interface PostViewProps extends React.PropsWithChildren {
   content?: React.ReactNode
+  frontmatter?: Post
 }
 
 export function PostView({ children, content }: PostViewProps) {
+  const router = useRouter()
+  const contentRef = useRef<HTMLElement>(null)
+
   function navigate() {
     if (!location.hash)
       return
@@ -28,7 +33,43 @@ export function PostView({ children, content }: PostViewProps) {
     return true
   }
 
+  const handleAnchors = (
+    e: Event,
+  ) => {
+    const event = e as MouseEvent
+    const target = event.target as HTMLElement
+    const link = target.closest('a')
+
+    if (
+      !event.defaultPrevented
+      && link
+      && event.button === 0
+      && link.target !== '_blank'
+      && link.rel !== 'external'
+      && !link.download
+      && !event.metaKey
+      && !event.ctrlKey
+      && !event.shiftKey
+      && !event.altKey
+    ) {
+      const url = new URL(link.href)
+      if (url.origin !== window.location.origin)
+        return
+
+      event.preventDefault()
+      const { pathname, hash } = url
+      if (hash && (!pathname || pathname === location.pathname)) {
+        window.history.replaceState({}, '', hash)
+        navigate()
+      }
+      else {
+        router.push(pathname + hash)
+      }
+    }
+  }
+
   useEventListener(null, 'hashchange', navigate)
+  useEventListener(contentRef.current!, 'click', handleAnchors, { passive: false })
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,7 +83,9 @@ export function PostView({ children, content }: PostViewProps) {
       className={`${styles.article} slide-enter-content`}
     >
       <ImagePreview />
-      {content}
+      <article ref={contentRef}>
+        {content}
+      </article>
       {children}
     </div>
   )
