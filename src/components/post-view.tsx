@@ -10,7 +10,7 @@ import { useEventListener } from '#/use/eventListener'
 
 interface PostViewProps extends React.PropsWithChildren {
   content?: React.ReactNode
-  frontmatter?: Post
+  frontmatter?: PostFrontmatter
 }
 
 export function PostView({ children, content, frontmatter }: PostViewProps) {
