@@ -4,7 +4,7 @@ import { Image, Modal, ModalBody, ModalContent } from '@nextui-org/react'
 import React, { useEffect, useRef } from 'react'
 
 import { useRouter } from 'next/navigation'
-import styles from './post-view.module.css'
+import styles from './WrapperPost.module.css'
 import { DraftTips } from './DraftTips'
 import { useEventListener } from '#/use/eventListener'
 
