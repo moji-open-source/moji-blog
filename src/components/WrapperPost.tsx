@@ -8,12 +8,12 @@ import styles from './post-view.module.css'
 import { DraftTips } from './DraftTips'
 import { useEventListener } from '#/use/eventListener'
 
-interface PostViewProps extends React.PropsWithChildren {
+interface WrapperPostProps extends React.PropsWithChildren {
   content?: React.ReactNode
   frontmatter?: PostFrontmatter
 }
 
-export function PostView({ children, content, frontmatter }: PostViewProps) {
+export function WrapperPost({ children, content, frontmatter }: WrapperPostProps) {
   const router = useRouter()
   const contentRef = useRef<HTMLElement>(null)
 

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 
 import dayjs from 'dayjs'
 import { getPostBySlug, getSlugs } from '#/core/post'
-import { PostView } from '#/components/post-view'
+import { WrapperPost } from '#/components/WrapperPost'
 import { Goback } from '#/components/goback'
 import { appendStrPrefix } from '#/article'
 import { getConfig } from '#/core/config'
@@ -74,12 +74,12 @@ export default async function PostPage(props: Props) {
           </span>
         </p>
       </div>
-      <PostView
+      <WrapperPost
         content={<MarkdownView />}
         frontmatter={frontmatter}
       >
         <Goback href="/" />
-      </PostView>
+      </WrapperPost>
     </div>
   )
 }
