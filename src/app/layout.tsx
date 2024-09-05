@@ -36,7 +36,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="light" data-theme="light" style={{ colorScheme: 'light' }}>
+    <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
       <body>
         <SpeedInsights />
         <Provider>
