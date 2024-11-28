@@ -43,8 +43,8 @@
     "next": "15.0.3",
     "next-themes": "^0.4.3",
     "octokit": "^4.0.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "19.0.0-rc-b01722d5-20241114",
+    "react-dom": "19.0.0-rc-b01722d5-20241114",
     "react-use": "^17.5.1",
     "toml": "^3.0.0",
     "unplugin-react-markdown": "^0.1.9"
