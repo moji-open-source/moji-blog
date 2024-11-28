@@ -1,12 +1,12 @@
 'use client'
-import { useEvent } from 'react-use'
-import { Image, Modal, ModalBody, ModalContent } from '@nextui-org/react'
-import React, { useEffect, useRef } from 'react'
-
-import { useRouter } from 'next/navigation'
-import styles from './WrapperPost.module.css'
-import { DraftTips } from './DraftTips'
 import { useEventListener } from '#/use/eventListener'
+import { Image, Modal, ModalBody, ModalContent } from '@nextui-org/react'
+import { useRouter } from 'next/navigation'
+
+import React, { useEffect, useRef } from 'react'
+import { useEvent } from 'react-use'
+import { DraftTips } from './DraftTips'
+import styles from './WrapperPost.module.css'
 
 interface WrapperPostProps extends React.PropsWithChildren {
   content?: React.ReactNode

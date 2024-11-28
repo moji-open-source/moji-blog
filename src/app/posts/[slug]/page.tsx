@@ -9,9 +9,9 @@ import dayjs from 'dayjs'
 import { notFound } from 'next/navigation'
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 // dynamic metadata
