@@ -96,7 +96,7 @@ export function WrapperPost({ children, content, frontmatter }: WrapperPostProps
 
 function ImagePreview() {
   const [imagePreviewState, setImagePreviewState] = React.useState(false)
-  const imageModel = React.useRef<HTMLImageElement>()
+  const imageModel = React.useRef<HTMLImageElement>(null)
   let invertClass = 'filter dark:invert'
 
   useEvent('click', (e) => {
