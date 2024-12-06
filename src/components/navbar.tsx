@@ -35,7 +35,7 @@ export function MojiNavbar({ items, logoText, logo }: MojiNavbarProps) {
       >
         <Link href="/" color="foreground">
           <NavbarBrand>
-            <Image src={logo} width={25} height={25} radius="none" />
+            <Image src={logo} width={25} height={25} radius="none" alt="Sit Logo" />
             <p className="font-bold text-inherit ml-2">{logoText}</p>
           </NavbarBrand>
         </Link>
