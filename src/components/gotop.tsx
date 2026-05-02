@@ -1,6 +1,6 @@
 'use client'
-import { Button } from '@nextui-org/react'
 import { useWindowScroll } from 'react-use'
+import { Button } from './ui/button'
 
 export function GoTopBtn() {
   function toTop() {
@@ -15,9 +15,9 @@ export function GoTopBtn() {
 
   return (
     <Button
-      isIconOnly
+      size="icon"
       className={`fixed w-10 h-10 right-3 bottom-20 hover:opacity-100 ${showClass} z-10 `}
-      variant="light"
+      variant="ghost"
       onClick={toTop}
       aria-label="Go to the top"
     >

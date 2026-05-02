@@ -1,0 +1,270 @@
+.article {
+  font-size: 16px;
+  word-wrap: break-word;
+  border-radius: 10px;
+}
+
+.article strong {
+  font-weight: 600;
+  color: var(--fg-deep);
+}
+
+.article ol {
+  list-style-type: decimal;
+  counter-reset: sectioncounter;
+  padding-left: 2em;
+}
+
+.article h1 {
+  color: var(--fg-deeper);
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: .8888889em;
+  line-height: 1.1111111;
+}
+
+.article h2 {
+  color: var(--fg-deeper);
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+}
+
+.article h3 {
+  color: inherit;
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-bottom: .6em;
+  line-height: 1.6;
+}
+
+.article h4 {
+  color: inherit;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
+  line-height: 1.5;
+}
+
+.article h6 {
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.article blockquote {
+  color: inherit;
+  border-left-width: .25rem;
+  border-color: #7d7d7d4d;
+  quotes: "“" "”" "‘" "’";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  font-style: normal;
+  line-height: 1.6em;
+  padding: .5em 1em;
+}
+
+.article > blockquote {
+  margin-left: -1.1em;
+}
+
+.article blockquote>* {
+  opacity: 0.7;
+}
+
+.article p,
+.article blockquote,
+.article ul,
+.article ol,
+.article dl,
+.article table,
+.article pre,
+.article details {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.article ul>li {
+  position: relative;
+  padding-left: 1.75em;
+}
+
+.article li {
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+.article ul>li:before {
+  content: "";
+  position: absolute;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  width: .375em;
+  height: .375em;
+  top: .6875em;
+  left: .25em;
+}
+
+.article p:last-child {
+  margin-bottom: 0;
+}
+
+
+.article a {
+  font-weight: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(125, 125, 125, .3);
+  transition: border .3s ease-in-out;
+  color: var(--fg-deeper);
+}
+
+/********************** table begin ***********************/
+.article table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: .875em;
+  line-height: 1.7142857;
+}
+
+.article table tr:nth-child(2n) {
+  background-color: var(--bgColor-muted);
+}
+
+.article table tr {
+  background-color: var(--bgColor-default);
+  border-top: 1px solid var(--borderColor-muted);
+}
+
+.article thead {
+  color: var(--fg-deeper);
+  font-weight: 600;
+  border-bottom-width: 1px;
+  border-bottom-color: #8882;
+}
+
+.article thead th {
+  vertical-align: bottom;
+  padding-right: .5714286em;
+  padding-bottom: .5714286em;
+  padding-left: .5714286em;
+}
+
+.article tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: #8882;
+}
+
+.article tbody td {
+  vertical-align: top;
+  padding: .5714286em;
+}
+
+/********************** table begin ***********************/
+
+/********************** code end ***********************/
+
+/* Shiki output may bypass the React `code` component, so bind the font in CSS too. */
+.article code,
+.article pre,
+.article tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.article pre[data-language] code {
+  background-color: transparent !important;
+  padding: 10px;
+  border: none;
+  word-wrap: normal;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  overflow: auto;
+  display: block;
+}
+
+.article pre[data-language] {
+  border-radius: 5px;
+}
+
+.article pre[data-language] {
+  position: relative;
+  background-color: var(--shiki-light-bg, var(--muted));
+  color: var(--shiki-light, inherit);
+}
+
+.article pre[data-language]::after {
+  opacity: 0.2;
+  content: attr(data-language);
+  font-size: 1.625rem;
+  font-weight: 700;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.2rem;
+  user-select: none;
+  pointer-events: none;
+  color: #64778b;
+  font-family: ui-monospace, JetBrains Mono, SFMono-Regular, Menlo, Monaco,
+    Consolas, Andale Mono, Liberation Mono, Ubuntu Mono, Courier New, monospace;
+}
+
+.article [data-theme*=" "] span {
+  color: var(--shiki-light, inherit);
+  font-style: var(--shiki-light-font-style, inherit);
+  font-weight: var(--shiki-light-font-weight, inherit);
+  text-decoration: var(--shiki-light-text-decoration, inherit);
+}
+
+:global(.dark) .article pre[data-language] {
+  background-color: var(--shiki-dark-bg, var(--muted));
+  color: var(--shiki-dark, inherit);
+}
+
+:global(.dark) .article [data-theme*=" "] span {
+  color: var(--shiki-dark, inherit);
+  font-style: var(--shiki-dark-font-style, inherit);
+  font-weight: var(--shiki-dark-font-weight, inherit);
+  text-decoration: var(--shiki-dark-text-decoration, inherit);
+}
+
+/********************** code end ***********************/
+/********************** img begin ***********************/
+.article p>img {
+  width: 100%;
+  border-radius: .5rem;
+  transform: scale(1.05);
+  margin: 2.6em 0;
+}
+
+.article img {
+  width: 100%;
+}
+
+.article figure>* {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.article figure figcaption {
+  color: #6b7280;
+  font-size: .875em;
+  line-height: 1.4285714;
+  margin-top: .8571429em;
+}
+
+/********************** img end ***********************/

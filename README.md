@@ -1,50 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Starter NextJS 🚀
 
-## Tool Recommend
+A **stubbornly opinionated** starter template for Next.js projects — designed to get you productive fast with a modern, well-structured setup.
 
-Flowchart drawing: <https://www.iodraw.com/whiteboard/>
+This template reflects my preferred workflow and best practices, aiming to reduce boilerplate while keeping things explicit, predictable, and maintainable.
 
-## Post Properties
+---
 
-| properties | type                | description                                                                                                                     | default | require | example                                         |
-| ---------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- | ----------------------------------------------- |
-| title      | string              | display as post title instead of using 'h1'                                                                                     |         | √       | title: Golang language fundamentals study notes |
-| tags       | string\[\]          | post tags                                                                                                                       | `[]`    | ×       | tags:<br>  - learn<br>  - golang                |
-| lang       | string              | post read language. It can be auto switched lang to the system language.                                                        |         | ×       | lang: en                                        |
-| date       | yyyy-MM-dd HH:mm:ss | post first publish datetime                                                                                                     |         | √       | date: 2024-04-15 10:34:30                       |
-| categories | string\[\]          | post category                                                                                                                   |         | ×       | categories:<br>  - notes                        |
-| pid        | string              | post id, each post should have a unique id                                                                                      |         | √       | pid: 6f604b36-5d8f-4227-ac85-db43927cf53b       |
-| last-edit  | yyyy-MM-dd HH:mm:ss | the date of the last edit of the post, if not, used date property value. If it is more than 3 months, the post may be outdated. | `#date` | ×       | last-edit: 2024-09-15 14:23:49                  |
-| duration   | string              | estimated reading time                                                                                                          | -       | ×       | duration: 15min                                 |
-| author      | string              | post author                                                                                                                      |         | x       | author: Clover                                   |
+## ✨ Features
 
-## Getting Started
+* ⚡ **Next.js (App Router)** — modern routing & layout structure
+* 🟦 **TypeScript** — strict and type-safe by default
+* 🎨 **Tailwind CSS** — utility-first styling with PostCSS
+* 🌗 **Theme support** — built-in light / dark mode
+* 🌍 **Internationalization (i18n)** — ready-to-use locale structure
+* 🧹 **ESLint (v9)** — opinionated lint rules
+* 🧪 **lint-staged + simple-git-hooks** — fast, lightweight git hooks
+* 📦 **pnpm** — fast and disk-efficient package management
+* ☁️ **Vercel-ready** — zero-config deployment support
 
-First, run the development server:
+---
 
-```bash
-
-pnpm dev
+## 📁 Project Structure
 
 ```
+.
+├── src/                # Application source code
+│   ├── app/            # Next.js App Router
+│   ├── components/     # Shared UI components
+│   ├── styles/         # Global styles
+│   └── utils/          # Utility functions
+├── locales/            # i18n message files
+├── public/             # Static assets
+├── .github/workflows/  # CI configuration
+└── vercel.ts           # Vercel-specific config
+```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 1. Create a new project
 
-## Learn More
+Use this repository as a template:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git clone git@github.com:clovu/starter-nextjs.git
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Or click **“Use this template”** on GitHub.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 2. Install dependencies
 
-## Deploy on Vercel
+```bash
+pnpm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Start development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm dev
+```
+
+---
+
+## 🌍 Internationalization
+
+* Locale files live in the `locales/` directory
+* Supports language switching with graceful loading states
+
+---
+
+## 📄 License
+
+MIT License © 2026 [Clover You](https://github.com/clovu)
